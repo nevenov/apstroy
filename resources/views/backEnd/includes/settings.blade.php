@@ -43,7 +43,7 @@
             </div>
             <br>
 
-            @if(Helper::GeneralWebmasterSettings("ar_box_status") || Helper::GeneralWebmasterSettings("en_box_status") || Helper::GeneralWebmasterSettings("ru_box_status"))
+            {{--@if(Helper::GeneralWebmasterSettings("ar_box_status") || Helper::GeneralWebmasterSettings("en_box_status") || Helper::GeneralWebmasterSettings("ru_box_status"))--}}
                 <p>{{ trans('backLang.language') }}:</p>
 
                 {{Form::open(['route'=>'lang','method'=>'post'])}}
@@ -59,6 +59,9 @@
                         @if(Helper::GeneralWebmasterSettings("ru_box_status"))
                             <option value="ru" {{ (trans('backLang.code')=="ru")?"selected='selected'":"" }}>{{ strip_tags(trans('backLang.russianBox')) }}</option>
                         @endif
+                        @if(Helper::GeneralWebmasterSettings("it_box_status"))
+                            <option value="it" {{ (trans('backLang.code')=="it")?"selected='selected'":"" }}>{{ strip_tags(trans('backLang.italianBox')) }}</option>
+                        @endif
                     </select>
                 </div>
 
@@ -67,7 +70,7 @@
                 </div>
                 {{Form::close()}}
                 <a href="{{ route('cacheClear') }}" onclick="return confirm('{{ trans('backLang.cashClearMsg') }}')"><small>{!!  trans('backLang.cashClear') !!}</small></a>
-            @endif
+            {{--@endif--}}
         </div>
     </div>
 
