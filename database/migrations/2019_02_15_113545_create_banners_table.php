@@ -18,11 +18,17 @@ class CreateBannersTable extends Migration
             $table->integer('section_id');
             $table->string('title_ar')->nullable();
             $table->string('title_en')->nullable();
+            $table->string('title_ru')->nullable();
+            $table->string('title_it')->nullable();
             $table->text('details_ar')->nullable();
             $table->text('details_en')->nullable();
+            $table->text('details_ru')->nullable();
+            $table->text('details_it')->nullable();
             $table->text('code')->nullable();
             $table->string('file_ar')->nullable();
             $table->string('file_en')->nullable();
+            $table->string('file_ru')->nullable();
+            $table->string('file_it')->nullable();
             $table->tinyInteger('video_type')->nullable();
             $table->string('youtube_link')->nullable();
             $table->string('link_url')->nullable();

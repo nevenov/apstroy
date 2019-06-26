@@ -162,6 +162,31 @@
                     </div>
                 @endif
 
+                @if(Helper::GeneralWebmasterSettings("ru_box_status"))
+                    <div class="form-group row">
+                        <label for="title_ru"
+                               class="col-sm-2 form-control-label">{!!  trans('backLang.topicName') !!}
+                            @if(Helper::GeneralWebmasterSettings("ru_box_status") && Helper::GeneralWebmasterSettings("ru_box_status")){!!  trans('backLang.russianBox') !!}@endif
+                        </label>
+                        <div class="col-sm-10">
+                            {!! Form::text('title_ru','', array('placeholder' => '','class' => 'form-control','id'=>'title_ru','required'=>'', 'dir'=>trans('backLang.ltr'))) !!}
+                        </div>
+                    </div>
+                @endif
+
+
+                @if(Helper::GeneralWebmasterSettings("it_box_status"))
+                    <div class="form-group row">
+                        <label for="title_it"
+                               class="col-sm-2 form-control-label">{!!  trans('backLang.topicName') !!}
+                            @if(Helper::GeneralWebmasterSettings("it_box_status") && Helper::GeneralWebmasterSettings("it_box_status")){!!  trans('backLang.italianBox') !!}@endif
+                        </label>
+                        <div class="col-sm-10">
+                            {!! Form::text('title_it','', array('placeholder' => '','class' => 'form-control','id'=>'title_it','required'=>'', 'dir'=>trans('backLang.ltr'))) !!}
+                        </div>
+                    </div>
+                @endif
+
                 @if($WebmasterSection->longtext_status)
 
                     @if($WebmasterSection->editor_status)

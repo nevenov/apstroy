@@ -17,10 +17,16 @@ class CreateSettingsTable extends Migration
             $table->increments('id');
             $table->string('site_title_ar');
             $table->string('site_title_en');
+            $table->string('site_title_ru');
+            $table->string('site_title_it');
             $table->string('site_desc_ar');
             $table->string('site_desc_en');
+            $table->string('site_desc_ru');
+            $table->string('site_desc_it');
             $table->text('site_keywords_ar');
             $table->text('site_keywords_en');
+            $table->text('site_keywords_ru');
+            $table->text('site_keywords_it');
             $table->string('site_webmails');
             $table->tinyInteger('notify_messages_status')->nullable();
             $table->tinyInteger('notify_comments_status')->nullable();
@@ -40,15 +46,21 @@ class CreateSettingsTable extends Migration
             $table->string('social_link10');
             $table->string('contact_t1_ar');
             $table->string('contact_t1_en');
+            $table->string('contact_t1_ru');
+            $table->string('contact_t1_it');
             $table->string('contact_t3');
             $table->string('contact_t4');
             $table->string('contact_t5');
             $table->string('contact_t6');
             $table->string('contact_t7_ar');
             $table->string('contact_t7_en');
+            $table->string('contact_t7_ru');
+            $table->string('contact_t7_it');
 
             $table->string('style_logo_ar')->nullable();
             $table->string('style_logo_en')->nullable();
+            $table->string('style_logo_ru')->nullable();
+            $table->string('style_logo_it')->nullable();
             $table->string('style_fav')->nullable();;
             $table->string('style_apple')->nullable();
             $table->string('style_color1')->nullable();

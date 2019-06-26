@@ -17,6 +17,8 @@ class CreateWebmasterSettingsTable extends Migration
             $table->increments('id');
             $table->tinyInteger('ar_box_status');
             $table->tinyInteger('en_box_status');
+            $table->tinyInteger('ru_box_status');
+            $table->tinyInteger('it_box_status');
             $table->tinyInteger('seo_status');
             $table->tinyInteger('analytics_status');
             $table->tinyInteger('banners_status');

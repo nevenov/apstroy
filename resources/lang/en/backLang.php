@@ -15,7 +15,7 @@ return [
     'rtl' => 'ltr',
     'ltr' => 'ltr',
     'boxCode' => 'en',
-    'boxCodeOther' => 'ar',
+    'boxCodeOther' => 'en',
     'translations' => 'You can update Translation from here',
     'calendarLanguage' => 'en',
     'mapsLanguage' => 'en',

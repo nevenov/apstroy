@@ -19,6 +19,8 @@ class CreateAttachFilesTable extends Migration
             $table->string('file')->nullable();
             $table->string('title_ar')->nullable();
             $table->string('title_en')->nullable();
+            $table->string('title_ru')->nullable();
+            $table->string('title_it')->nullable();
             $table->integer('row_no');
             $table->integer('created_by')->nullable();
             $table->integer('updated_by')->nullable();

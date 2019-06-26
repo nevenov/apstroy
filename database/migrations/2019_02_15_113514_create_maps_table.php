@@ -20,8 +20,12 @@ class CreateMapsTable extends Migration
             $table->string('latitude')->nullable();
             $table->string('title_ar')->nullable();
             $table->string('title_en')->nullable();
+            $table->string('title_ru')->nullable();
+            $table->string('title_it')->nullable();
             $table->text('details_ar')->nullable();
             $table->text('details_en')->nullable();
+            $table->text('details_ru')->nullable();
+            $table->text('details_it')->nullable();
             $table->tinyInteger('icon');
             $table->tinyInteger('status');
             $table->integer('row_no');

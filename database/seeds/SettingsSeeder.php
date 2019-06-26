@@ -15,12 +15,18 @@ class SettingsSeeder extends Seeder
         //  Default Site Settings
 
         $settings = new Setting();
-        $settings->site_title_ar = "اسم الموقع";
+        $settings->site_title_ar = "Site Title";
         $settings->site_title_en = "Site Title";
-        $settings->site_desc_ar = "وصف الموقع الإلكتروني ونبذة قصيره عنه";
+        $settings->site_title_ru = "Site Title";
+        $settings->site_title_it = "Site Title";
+        $settings->site_desc_ar = "Website description and some little information about it";
         $settings->site_desc_en = "Website description and some little information about it";
-        $settings->site_keywords_ar = "كلمات، دلالية، موقع، موقع إلكتروني";
+        $settings->site_desc_ru = "Website description and some little information about it";
+        $settings->site_desc_it = "Website description and some little information about it";
+        $settings->site_keywords_ar = "key, words, website, web";
         $settings->site_keywords_en = "key, words, website, web";
+        $settings->site_keywords_ru = "key, words, website, web";
+        $settings->site_keywords_it = "key, words, website, web";
         $settings->site_webmails = "info@sitename.com";
         $settings->notify_messages_status = "1";
         $settings->notify_comments_status = "1";
@@ -38,14 +44,18 @@ class SettingsSeeder extends Seeder
         $settings->social_link8 = "#";
         $settings->social_link9 = "#";
         $settings->social_link10 = "#";
-        $settings->contact_t1_ar = "المبني - اسم الشارع - المدينة - الدولة";
+        $settings->contact_t1_ar = "Building, Street name, City, Country";
         $settings->contact_t1_en = "Building, Street name, City, Country";
+        $settings->contact_t1_ru = "Building, Street name, City, Country";
+        $settings->contact_t1_it = "Building, Street name, City, Country";
         $settings->contact_t3 = "+(xxx) 0xxxxxxx";
         $settings->contact_t4 = "+(xxx) 0xxxxxxx";
         $settings->contact_t5 = "+(xxx) 0xxxxxxx";
         $settings->contact_t6 = "info@sitename.com";
-        $settings->contact_t7_ar = "من الأحد إلى الخميس 08:00 ص - 05:00 م";
+        $settings->contact_t7_ar = "Sunday to Thursday 08:00 AM to 05:00 PM";
         $settings->contact_t7_en = "Sunday to Thursday 08:00 AM to 05:00 PM";
+        $settings->contact_t7_ru = "Sunday to Thursday 08:00 AM to 05:00 PM";
+        $settings->contact_t7_it = "Sunday to Thursday 08:00 AM to 05:00 PM";
 
         $settings->style_color1 = "#0cbaa4";
         $settings->style_color2 = "#2e3e4e";
