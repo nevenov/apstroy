@@ -33,10 +33,10 @@
                     <div class="form-group row">
                         <label for="title_ar"
                                class="col-sm-2 form-control-label">{!!  trans('backLang.bannerTitle') !!}
-                            @if(Helper::GeneralWebmasterSettings("ar_box_status") && Helper::GeneralWebmasterSettings("en_box_status")){!!  trans('backLang.arabicBox') !!}@endif
+                            {!!  trans('backLang.arabicBox') !!}
                         </label>
                         <div class="col-sm-10">
-                            {!! Form::text('title_ar','', array('placeholder' => '','class' => 'form-control','id'=>'title_ar','required'=>'', 'dir'=>trans('backLang.rtl'))) !!}
+                            {!! Form::text('title_ar','', array('placeholder' => '','class' => 'form-control','id'=>'title_ar','required'=>'', 'dir'=>trans('backLang.ltr'))) !!}
                         </div>
                     </div>
                 @endif
@@ -44,10 +44,32 @@
                     <div class="form-group row">
                         <label for="title_en"
                                class="col-sm-2 form-control-label">{!!  trans('backLang.bannerTitle') !!}
-                            @if(Helper::GeneralWebmasterSettings("ar_box_status") && Helper::GeneralWebmasterSettings("en_box_status")){!!  trans('backLang.englishBox') !!}@endif
+                            {!!  trans('backLang.englishBox') !!}
                         </label>
                         <div class="col-sm-10">
                             {!! Form::text('title_en','', array('placeholder' => '','class' => 'form-control','id'=>'title_en','required'=>'', 'dir'=>trans('backLang.ltr'))) !!}
+                        </div>
+                    </div>
+                @endif
+                @if(Helper::GeneralWebmasterSettings("ru_box_status"))
+                    <div class="form-group row">
+                        <label for="title_ru"
+                               class="col-sm-2 form-control-label">{!!  trans('backLang.bannerTitle') !!}
+                            {!!  trans('backLang.russianBox') !!}
+                        </label>
+                        <div class="col-sm-10">
+                            {!! Form::text('title_ru','', array('placeholder' => '','class' => 'form-control','id'=>'title_ru','required'=>'', 'dir'=>trans('backLang.ltr'))) !!}
+                        </div>
+                    </div>
+                @endif
+                @if(Helper::GeneralWebmasterSettings("it_box_status"))
+                    <div class="form-group row">
+                        <label for="title_it"
+                               class="col-sm-2 form-control-label">{!!  trans('backLang.bannerTitle') !!}
+                            {!!  trans('backLang.italianBox') !!}
+                        </label>
+                        <div class="col-sm-10">
+                            {!! Form::text('title_it','', array('placeholder' => '','class' => 'form-control','id'=>'title_it','required'=>'', 'dir'=>trans('backLang.ltr'))) !!}
                         </div>
                     </div>
                 @endif
@@ -103,6 +125,8 @@
                         $ttile = "bannerPhoto";
                         $file1 = "file_ar";
                         $file2 = "file_en";
+                        $file2 = "file_ru";
+                        $file2 = "file_it";
                         $file_allow = "image/*";
                         ?>
                     @else
@@ -110,6 +134,8 @@
                         $ttile = "topicVideo";
                         $file1 = "file2_ar";
                         $file2 = "file2_en";
+                        $file2 = "file2_ru";
+                        $file2 = "file2_it";
                         $file_allow = "*'";
                         ?>
                     @endif
@@ -119,7 +145,7 @@
                             <div class="form-group row">
                                 <label for="file_ar"
                                        class="col-sm-2 form-control-label">{!!  trans('backLang.'.$ttile) !!}
-                                    @if(Helper::GeneralWebmasterSettings("ar_box_status") && Helper::GeneralWebmasterSettings("en_box_status")){!!  trans('backLang.arabicBox') !!}@endif
+                                    {!!  trans('backLang.arabicBox') !!}
                                 </label>
                                 <div class="col-sm-10">
                                     {!! Form::file($file1, array('class' => 'form-control','id'=>'file_ar','accept'=>$file_allow)) !!}
@@ -130,13 +156,35 @@
                             <div class="form-group row">
                                 <label for="file_en"
                                        class="col-sm-2 form-control-label">{!!  trans('backLang.'.$ttile) !!}
-                                    @if(Helper::GeneralWebmasterSettings("ar_box_status") && Helper::GeneralWebmasterSettings("en_box_status")){!!  trans('backLang.englishBox') !!}@endif
+                                    {!!  trans('backLang.englishBox') !!}
                                 </label>
                                 <div class="col-sm-10">
                                     {!! Form::file($file2, array('class' => 'form-control','id'=>'file_en','accept'=>$file_allow)) !!}
                                 </div>
                             </div>
                         @endif
+                            @if(Helper::GeneralWebmasterSettings("ru_box_status"))
+                                <div class="form-group row">
+                                    <label for="file_ru"
+                                           class="col-sm-2 form-control-label">{!!  trans('backLang.'.$ttile) !!}
+                                        {!!  trans('backLang.russianBox') !!}
+                                    </label>
+                                    <div class="col-sm-10">
+                                        {!! Form::file($file2, array('class' => 'form-control','id'=>'file_ru','accept'=>$file_allow)) !!}
+                                    </div>
+                                </div>
+                            @endif
+                            @if(Helper::GeneralWebmasterSettings("it_box_status"))
+                                <div class="form-group row">
+                                    <label for="file_it"
+                                           class="col-sm-2 form-control-label">{!!  trans('backLang.'.$ttile) !!}
+                                        {!!  trans('backLang.italianBox') !!}
+                                    </label>
+                                    <div class="col-sm-10">
+                                        {!! Form::file($file2, array('class' => 'form-control','id'=>'file_it','accept'=>$file_allow)) !!}
+                                    </div>
+                                </div>
+                            @endif
                         <div class="form-group row m-t-md" style="margin-top: 0 !important;">
                             <div class="col-sm-offset-2 col-sm-10">
                                 <small>
@@ -157,10 +205,10 @@
                         <div class="form-group row">
                             <label for="details_ar"
                                    class="col-sm-2 form-control-label">{!!  trans('backLang.bannerDetails') !!}
-                                @if(Helper::GeneralWebmasterSettings("ar_box_status") && Helper::GeneralWebmasterSettings("en_box_status")){!!  trans('backLang.arabicBox') !!}@endif
+                                {!!  trans('backLang.arabicBox') !!}
                             </label>
                             <div class="col-sm-10">
-                                {!! Form::textarea('details_ar','', array('placeholder' => '','class' => 'form-control', 'dir'=>trans('backLang.rtl'),'rows'=>'3')) !!}
+                                {!! Form::textarea('details_ar','', array('placeholder' => '','class' => 'form-control', 'dir'=>trans('backLang.ltr'),'rows'=>'3')) !!}
                             </div>
                         </div>
                     @endif
@@ -168,10 +216,32 @@
                         <div class="form-group row">
                             <label for="details_en"
                                    class="col-sm-2 form-control-label">{!!  trans('backLang.bannerDetails') !!}
-                                @if(Helper::GeneralWebmasterSettings("ar_box_status") && Helper::GeneralWebmasterSettings("en_box_status")){!!  trans('backLang.englishBox') !!}@endif
+                                {!!  trans('backLang.englishBox') !!}
                             </label>
                             <div class="col-sm-10">
                                 {!! Form::textarea('details_en','', array('placeholder' => '','class' => 'form-control', 'dir'=>trans('backLang.ltr'),'rows'=>'3')) !!}
+                            </div>
+                        </div>
+                    @endif
+                    @if(Helper::GeneralWebmasterSettings("ru_box_status"))
+                        <div class="form-group row">
+                            <label for="details_ru"
+                                   class="col-sm-2 form-control-label">{!!  trans('backLang.bannerDetails') !!}
+                                {!!  trans('backLang.russianBox') !!}
+                            </label>
+                            <div class="col-sm-10">
+                                {!! Form::textarea('details_ru','', array('placeholder' => '','class' => 'form-control', 'dir'=>trans('backLang.ltr'),'rows'=>'3')) !!}
+                            </div>
+                        </div>
+                    @endif
+                    @if(Helper::GeneralWebmasterSettings("it_box_status"))
+                        <div class="form-group row">
+                            <label for="details_it"
+                                   class="col-sm-2 form-control-label">{!!  trans('backLang.bannerDetails') !!}
+                                {!!  trans('backLang.italianBox') !!}
+                            </label>
+                            <div class="col-sm-10">
+                                {!! Form::textarea('details_it','', array('placeholder' => '','class' => 'form-control', 'dir'=>trans('backLang.ltr'),'rows'=>'3')) !!}
                             </div>
                         </div>
                     @endif
@@ -232,7 +302,7 @@
     <script src="{{ URL::to("backEnd/libs/js/iconpicker/fontawesome-iconpicker.js") }}"></script>
     <script>
         $(function () {
-            $('.icp-auto').iconpicker({placement: '{{ (trans('backLang.direction')=="rtl")?"topLeft":"topRight" }}'});
+            $('.icp-auto').iconpicker({placement: '{{ (trans('backLang.direction')=="rtl")?"topRight":"topRight" }}'});
         });
     </script>
 @endsection
