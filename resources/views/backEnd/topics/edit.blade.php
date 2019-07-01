@@ -308,10 +308,10 @@
                             <div class="form-group row">
                                 <label for="title_ar"
                                        class="col-sm-2 form-control-label">{!!  trans('backLang.topicName') !!}
-                                    @if(Helper::GeneralWebmasterSettings("ar_box_status") && Helper::GeneralWebmasterSettings("en_box_status")){!!  trans('backLang.arabicBox') !!}@endif
+                                    {!!  trans('backLang.arabicBox') !!}
                                 </label>
                                 <div class="col-sm-10">
-                                    {!! Form::text('title_ar',$Topics->title_ar, array('placeholder' => '','class' => 'form-control','id'=>'title_ar','required'=>'', 'dir'=>trans('backLang.rtl'))) !!}
+                                    {!! Form::text('title_ar',$Topics->title_ar, array('placeholder' => '','class' => 'form-control','id'=>'title_ar','required'=>'', 'dir'=>trans('backLang.ltr'))) !!}
                                 </div>
                             </div>
                         @endif
@@ -319,10 +319,32 @@
                             <div class="form-group row">
                                 <label for="title_en"
                                        class="col-sm-2 form-control-label">{!!  trans('backLang.topicName') !!}
-                                    @if(Helper::GeneralWebmasterSettings("ar_box_status") && Helper::GeneralWebmasterSettings("en_box_status")){!!  trans('backLang.englishBox') !!}@endif
+                                    {!!  trans('backLang.englishBox') !!}
                                 </label>
                                 <div class="col-sm-10">
                                     {!! Form::text('title_en',$Topics->title_en, array('placeholder' => '','class' => 'form-control','id'=>'title_en','required'=>'', 'dir'=>trans('backLang.ltr'))) !!}
+                                </div>
+                            </div>
+                        @endif
+                        @if(Helper::GeneralWebmasterSettings("ru_box_status"))
+                            <div class="form-group row">
+                                <label for="title_ru"
+                                       class="col-sm-2 form-control-label">{!!  trans('backLang.topicName') !!}
+                                    {!!  trans('backLang.russianBox') !!}
+                                </label>
+                                <div class="col-sm-10">
+                                    {!! Form::text('title_ru',$Topics->title_ru, array('placeholder' => '','class' => 'form-control','id'=>'title_ru','required'=>'', 'dir'=>trans('backLang.ltr'))) !!}
+                                </div>
+                            </div>
+                        @endif
+                        @if(Helper::GeneralWebmasterSettings("it_box_status"))
+                            <div class="form-group row">
+                                <label for="title_it"
+                                       class="col-sm-2 form-control-label">{!!  trans('backLang.topicName') !!}
+                                    {!!  trans('backLang.italianBox') !!}
+                                </label>
+                                <div class="col-sm-10">
+                                    {!! Form::text('title_it',$Topics->title_it, array('placeholder' => '','class' => 'form-control','id'=>'title_it','required'=>'', 'dir'=>trans('backLang.ltr'))) !!}
                                 </div>
                             </div>
                         @endif
@@ -336,11 +358,11 @@
                                     <div class="form-group row">
                                         <label for="details_ar"
                                                class="col-sm-2 form-control-label">{!!  trans('backLang.bannerDetails') !!}
-                                            @if(Helper::GeneralWebmasterSettings("ar_box_status") && Helper::GeneralWebmasterSettings("en_box_status")){!!  trans('backLang.arabicBox') !!}@endif
+                                            {!!  trans('backLang.arabicBox') !!}
                                         </label>
                                         <div class="col-sm-10">
                                             <div class="box p-a-xs">
-                                                {!! Form::textarea('details_ar',$Topics->details_ar, array('ui-jp'=>'summernote','placeholder' => '','class' => 'form-control summernote_ar', 'dir'=>trans('backLang.rtl'),'ui-options'=>'{height: 300,callbacks: {
+                                                {!! Form::textarea('details_ar',$Topics->details_ar, array('ui-jp'=>'summernote','placeholder' => '','class' => 'form-control summernote_ar', 'dir'=>trans('backLang.ltr'),'ui-options'=>'{height: 300,callbacks: {
         onImageUpload: function(files, editor, welEditable) {
             sendFile(files[0], editor, welEditable,0);
         }
@@ -353,11 +375,45 @@
                                     <div class="form-group row">
                                         <label for="details_en"
                                                class="col-sm-2 form-control-label">{!!  trans('backLang.bannerDetails') !!}
-                                            @if(Helper::GeneralWebmasterSettings("ar_box_status") && Helper::GeneralWebmasterSettings("en_box_status")){!!  trans('backLang.englishBox') !!}@endif
+                                            {!!  trans('backLang.englishBox') !!}
                                         </label>
                                         <div class="col-sm-10">
                                             <div class="box p-a-xs">
                                                 {!! Form::textarea('details_en',$Topics->details_en, array('ui-jp'=>'summernote','placeholder' => '','class' => 'form-control summernote_en', 'dir'=>trans('backLang.ltr'),'ui-options'=>'{height: 300,callbacks: {
+        onImageUpload: function(files, editor, welEditable) {
+            sendFile(files[0], editor, welEditable,1);
+        }
+    }}')) !!}
+                                            </div>
+                                        </div>
+                                    </div>
+                                @endif
+                                @if(Helper::GeneralWebmasterSettings("ru_box_status"))
+                                    <div class="form-group row">
+                                        <label for="details_ru"
+                                               class="col-sm-2 form-control-label">{!!  trans('backLang.bannerDetails') !!}
+                                            {!!  trans('backLang.russianBox') !!}
+                                        </label>
+                                        <div class="col-sm-10">
+                                            <div class="box p-a-xs">
+                                                {!! Form::textarea('details_ru',$Topics->details_en, array('ui-jp'=>'summernote','placeholder' => '','class' => 'form-control summernote_ru', 'dir'=>trans('backLang.ltr'),'ui-options'=>'{height: 300,callbacks: {
+        onImageUpload: function(files, editor, welEditable) {
+            sendFile(files[0], editor, welEditable,1);
+        }
+    }}')) !!}
+                                            </div>
+                                        </div>
+                                    </div>
+                                @endif
+                                @if(Helper::GeneralWebmasterSettings("it_box_status"))
+                                    <div class="form-group row">
+                                        <label for="details_it"
+                                               class="col-sm-2 form-control-label">{!!  trans('backLang.bannerDetails') !!}
+                                            {!!  trans('backLang.italianBox') !!}
+                                        </label>
+                                        <div class="col-sm-10">
+                                            <div class="box p-a-xs">
+                                                {!! Form::textarea('details_it',$Topics->details_it, array('ui-jp'=>'summernote','placeholder' => '','class' => 'form-control summernote_it', 'dir'=>trans('backLang.ltr'),'ui-options'=>'{height: 300,callbacks: {
         onImageUpload: function(files, editor, welEditable) {
             sendFile(files[0], editor, welEditable,1);
         }
@@ -371,10 +427,10 @@
                                     <div class="form-group row">
                                         <label for="details_ar"
                                                class="col-sm-2 form-control-label">{!!  trans('backLang.bannerDetails') !!}
-                                            @if(Helper::GeneralWebmasterSettings("ar_box_status") && Helper::GeneralWebmasterSettings("en_box_status")){!!  trans('backLang.arabicBox') !!}@endif
+                                            {!!  trans('backLang.arabicBox') !!}
                                         </label>
                                         <div class="col-sm-10">
-                                            {!! Form::textarea('details_ar',$Topics->details_ar, array('placeholder' => '','class' => 'form-control', 'dir'=>trans('backLang.rtl'),'rows'=>'5')) !!}
+                                            {!! Form::textarea('details_ar',$Topics->details_ar, array('placeholder' => '','class' => 'form-control', 'dir'=>trans('backLang.ltr'),'rows'=>'5')) !!}
                                         </div>
                                     </div>
                                 @endif
@@ -382,10 +438,32 @@
                                     <div class="form-group row">
                                         <label for="details_en"
                                                class="col-sm-2 form-control-label">{!!  trans('backLang.bannerDetails') !!}
-                                            @if(Helper::GeneralWebmasterSettings("ar_box_status") && Helper::GeneralWebmasterSettings("en_box_status")){!!  trans('backLang.englishBox') !!}@endif
+                                            {!!  trans('backLang.englishBox') !!}
                                         </label>
                                         <div class="col-sm-10">
                                             {!! Form::textarea('details_en',$Topics->details_en, array('placeholder' => '','class' => 'form-control', 'dir'=>trans('backLang.ltr'),'rows'=>'5')) !!}
+                                        </div>
+                                    </div>
+                                @endif
+                                @if(Helper::GeneralWebmasterSettings("ru_box_status"))
+                                    <div class="form-group row">
+                                        <label for="details_ru"
+                                               class="col-sm-2 form-control-label">{!!  trans('backLang.bannerDetails') !!}
+                                            {!!  trans('backLang.russianBox') !!}
+                                        </label>
+                                        <div class="col-sm-10">
+                                            {!! Form::textarea('details_ru',$Topics->details_ru, array('placeholder' => '','class' => 'form-control', 'dir'=>trans('backLang.ltr'),'rows'=>'5')) !!}
+                                        </div>
+                                    </div>
+                                @endif
+                                @if(Helper::GeneralWebmasterSettings("it_box_status"))
+                                    <div class="form-group row">
+                                        <label for="details_it"
+                                               class="col-sm-2 form-control-label">{!!  trans('backLang.bannerDetails') !!}
+                                            {!!  trans('backLang.italianBox') !!}
+                                        </label>
+                                        <div class="col-sm-10">
+                                            {!! Form::textarea('details_it',$Topics->details_it, array('placeholder' => '','class' => 'form-control', 'dir'=>trans('backLang.ltr'),'rows'=>'5')) !!}
                                         </div>
                                     </div>
                                 @endif

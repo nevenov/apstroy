@@ -63,10 +63,10 @@
                     <div class="form-group row">
                         <label for="title_ar"
                                class="col-sm-2 form-control-label">{!!  trans('backLang.sectionName') !!}
-                            @if(Helper::GeneralWebmasterSettings("ar_box_status") && Helper::GeneralWebmasterSettings("en_box_status")){!!  trans('backLang.arabicBox') !!}@endif
+                            {!!  trans('backLang.arabicBox') !!}
                         </label>
                         <div class="col-sm-10">
-                            {!! Form::text('title_ar','', array('placeholder' => '','class' => 'form-control','id'=>'title_ar','required'=>'', 'dir'=>trans('backLang.rtl'))) !!}
+                            {!! Form::text('title_ar','', array('placeholder' => '','class' => 'form-control','id'=>'title_ar','required'=>'', 'dir'=>trans('backLang.ltr'))) !!}
                         </div>
                     </div>
                 @endif
@@ -74,10 +74,32 @@
                     <div class="form-group row">
                         <label for="title_en"
                                class="col-sm-2 form-control-label">{!!  trans('backLang.sectionName') !!}
-                            @if(Helper::GeneralWebmasterSettings("ar_box_status") && Helper::GeneralWebmasterSettings("en_box_status")){!!  trans('backLang.englishBox') !!}@endif
+                            {!!  trans('backLang.englishBox') !!}
                         </label>
                         <div class="col-sm-10">
                             {!! Form::text('title_en','', array('placeholder' => '','class' => 'form-control','id'=>'title_en','required'=>'', 'dir'=>trans('backLang.ltr'))) !!}
+                        </div>
+                    </div>
+                @endif
+                @if(Helper::GeneralWebmasterSettings("ru_box_status"))
+                    <div class="form-group row">
+                        <label for="title_ru"
+                               class="col-sm-2 form-control-label">{!!  trans('backLang.sectionName') !!}
+                            {!!  trans('backLang.russianBox') !!}
+                        </label>
+                        <div class="col-sm-10">
+                            {!! Form::text('title_ru','', array('placeholder' => '','class' => 'form-control','id'=>'title_ru','required'=>'', 'dir'=>trans('backLang.ltr'))) !!}
+                        </div>
+                    </div>
+                @endif
+                @if(Helper::GeneralWebmasterSettings("it_box_status"))
+                    <div class="form-group row">
+                        <label for="title_it"
+                               class="col-sm-2 form-control-label">{!!  trans('backLang.sectionName') !!}
+                            {!!  trans('backLang.italianBox') !!}
+                        </label>
+                        <div class="col-sm-10">
+                            {!! Form::text('title_it','', array('placeholder' => '','class' => 'form-control','id'=>'title_it','required'=>'', 'dir'=>trans('backLang.ltr'))) !!}
                         </div>
                     </div>
                 @endif
