@@ -101,6 +101,8 @@ class MenusController extends Controller
         $Menu->father_id = $father;
         $Menu->title_ar = $request->title_ar;
         $Menu->title_en = $request->title_en;
+        $Menu->title_ru = $request->title_ru;
+        $Menu->title_it = $request->title_it;
         $Menu->type = $request->type;
         $Menu->link = $request->link;
         $Menu->cat_id = $request->cat_id;
@@ -134,6 +136,8 @@ class MenusController extends Controller
         $Menu->father_id = 0;
         $Menu->title_ar = $request->title_ar;
         $Menu->title_en = $request->title_en;
+        $Menu->title_ru = $request->title_ru;
+        $Menu->title_it = $request->title_it;
         $Menu->created_by = Auth::user()->id;
         $Menu->status = 1;
         $Menu->save();
@@ -206,6 +210,8 @@ class MenusController extends Controller
             $Menu->father_id = $request->father_id;
             $Menu->title_ar = $request->title_ar;
             $Menu->title_en = $request->title_en;
+            $Menu->title_ru = $request->title_ru;
+            $Menu->title_it = $request->title_it;
             $Menu->type = $request->type;
             $Menu->link = $request->link;
             $Menu->cat_id = $request->cat_id;
@@ -235,6 +241,8 @@ class MenusController extends Controller
         if (!empty($Menu)) {
             $Menu->title_ar = $request->title_ar;
             $Menu->title_en = $request->title_en;
+            $Menu->title_ru = $request->title_ru;
+            $Menu->title_it = $request->title_it;
             $Menu->updated_by = Auth::user()->id;
             $Menu->save();
             return redirect()->action('MenusController@index',

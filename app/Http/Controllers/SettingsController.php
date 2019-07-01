@@ -71,6 +71,8 @@ class SettingsController extends Controller
             $this->validate($request, [
                 'style_logo_en' => 'mimes:png,jpeg,jpg,gif|max:3000',
                 'style_logo_ar' => 'mimes:png,jpeg,jpg,gif|max:3000',
+                'style_logo_ru' => 'mimes:png,jpeg,jpg,gif|max:3000',
+                'style_logo_it' => 'mimes:png,jpeg,jpg,gif|max:3000',
                 'style_fav' => 'mimes:png,jpeg,jpg,gif|max:3000',
                 'style_apple' => 'mimes:png,jpeg,jpg,gif|max:3000',
                 'style_bg_image' => 'mimes:png,jpeg,jpg,gif|max:5000',
@@ -79,10 +81,16 @@ class SettingsController extends Controller
 
             $Setting->site_title_ar = $request->site_title_ar;
             $Setting->site_title_en = $request->site_title_en;
+            $Setting->site_title_ru = $request->site_title_ru;
+            $Setting->site_title_it = $request->site_title_it;
             $Setting->site_desc_ar = $request->site_desc_ar;
             $Setting->site_desc_en = $request->site_desc_en;
+            $Setting->site_desc_ru = $request->site_desc_ru;
+            $Setting->site_desc_it = $request->site_desc_it;
             $Setting->site_keywords_ar = $request->site_keywords_ar;
             $Setting->site_keywords_en = $request->site_keywords_en;
+            $Setting->site_keywords_ru = $request->site_keywords_ru;
+            $Setting->site_keywords_it = $request->site_keywords_it;
             $Setting->site_webmails = $request->site_webmails;
             $Setting->notify_messages_status = $request->notify_messages_status;
             $Setting->notify_comments_status = $request->notify_comments_status;
@@ -116,6 +124,33 @@ class SettingsController extends Controller
                         9999) . '.' . $request->file($formFileNameAr)->getClientOriginalExtension();
                 $path = $this->getUploadPath();
                 $request->file($formFileNameAr)->move($path, $fileFinalNameAr);
+            }
+
+            $formFileNameRu = "style_logo_ru";
+            $fileFinalNameRu = "";
+            if ($request->$formFileNameRu != "") {
+                // Delete a style_logo_ru photo
+                if ($Setting->style_logo_ru != "") {
+                    File::delete($this->getUploadPath() . $Setting->style_logo_ru);
+                }
+
+                $fileFinalNameRu = time() . rand(1111,
+                        9999) . '.' . $request->file($formFileNameRu)->getClientOriginalExtension();
+                $path = $this->getUploadPath();
+                $request->file($formFileNameRu)->move($path, $fileFinalNameRu);
+            }
+            $formFileNameIt = "style_logo_it";
+            $fileFinalNameIt = "";
+            if ($request->$formFileNameIt != "") {
+                // Delete a style_logo_it photo
+                if ($Setting->style_logo_it != "") {
+                    File::delete($this->getUploadPath() . $Setting->style_logo_it);
+                }
+
+                $fileFinalNameIt = time() . rand(1111,
+                        9999) . '.' . $request->file($formFileNameIt)->getClientOriginalExtension();
+                $path = $this->getUploadPath();
+                $request->file($formFileNameIt)->move($path, $fileFinalNameIt);
             }
 
             $formFileName2 = "style_fav";
@@ -186,6 +221,15 @@ class SettingsController extends Controller
             if ($fileFinalNameAr != "") {
                 $Setting->style_logo_ar = $fileFinalNameAr;
             }
+
+            if ($fileFinalNameRu != "") {
+                $Setting->style_logo_ru = $fileFinalNameRu;
+            }
+
+            if ($fileFinalNameIt != "") {
+                $Setting->style_logo_it = $fileFinalNameIt;
+            }
+
             if ($fileFinalName2 != "") {
                 $Setting->style_fav = $fileFinalName2;
             }
@@ -232,12 +276,16 @@ class SettingsController extends Controller
 
             $Setting->contact_t1_ar = $request->contact_t1_ar;
             $Setting->contact_t1_en = $request->contact_t1_en;
+            $Setting->contact_t1_ru = $request->contact_t1_ru;
+            $Setting->contact_t1_it = $request->contact_t1_it;
             $Setting->contact_t3 = $request->contact_t3;
             $Setting->contact_t4 = $request->contact_t4;
             $Setting->contact_t5 = $request->contact_t5;
             $Setting->contact_t6 = $request->contact_t6;
             $Setting->contact_t7_ar = $request->contact_t7_ar;
             $Setting->contact_t7_en = $request->contact_t7_en;
+            $Setting->contact_t7_ru = $request->contact_t7_ru;
+            $Setting->contact_t7_it = $request->contact_t7_it;
 
             $Setting->site_status = $request->site_status;
             $Setting->close_msg = $request->close_msg;

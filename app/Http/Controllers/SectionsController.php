@@ -139,6 +139,8 @@ class SectionsController extends Controller
         $Section->row_no = $next_nor_no;
         $Section->title_ar = $request->title_ar;
         $Section->title_en = $request->title_en;
+        $Section->title_ru = $request->title_ru;
+        $Section->title_it = $request->title_it;
         $Section->icon = $request->icon;
         if ($fileFinalName != "") {
             $Section->photo = $fileFinalName;
@@ -153,11 +155,15 @@ class SectionsController extends Controller
         // Meta title
         $Section->seo_title_ar = $request->title_ar;
         $Section->seo_title_en = $request->title_en;
+        $Section->seo_title_ru = $request->title_ru;
+        $Section->seo_title_it = $request->title_it;
 
         //URL Slugs
         $slugs = Helper::URLSlug($request->title_ar, $request->title_en, "category", 0);
         $Section->seo_url_slug_ar = $slugs['slug_ar'];
         $Section->seo_url_slug_en = $slugs['slug_en'];
+        $Section->seo_url_slug_ru = $slugs['slug_ru'];
+        $Section->seo_url_slug_it = $slugs['slug_it'];
 
 
         $Section->save();
@@ -247,6 +253,8 @@ class SectionsController extends Controller
 
             $Section->title_ar = $request->title_ar;
             $Section->title_en = $request->title_en;
+            $Section->title_ru = $request->title_ru;
+            $Section->title_it = $request->title_it;
             $Section->icon = $request->icon;
             if ($request->photo_delete == 1) {
                 // Delete photo
@@ -279,16 +287,24 @@ class SectionsController extends Controller
 
             $Section->seo_title_ar = $request->seo_title_ar;
             $Section->seo_title_en = $request->seo_title_en;
+            $Section->seo_title_ru = $request->seo_title_ru;
+            $Section->seo_title_it = $request->seo_title_it;
             $Section->seo_description_ar = $request->seo_description_ar;
             $Section->seo_description_en = $request->seo_description_en;
+            $Section->seo_description_ru = $request->seo_description_ru;
+            $Section->seo_description_it = $request->seo_description_it;
             $Section->seo_keywords_ar = $request->seo_keywords_ar;
             $Section->seo_keywords_en = $request->seo_keywords_en;
+            $Section->seo_keywords_ru = $request->seo_keywords_ru;
+            $Section->seo_keywords_it = $request->seo_keywords_it;
             $Section->updated_by = Auth::user()->id;
 
             //URL Slugs
             $slugs = Helper::URLSlug($request->seo_url_slug_ar, $request->seo_url_slug_en, "category", $id);
             $Section->seo_url_slug_ar = $slugs['slug_ar'];
             $Section->seo_url_slug_en = $slugs['slug_en'];
+            $Section->seo_url_slug_ru = $slugs['slug_ru'];
+            $Section->seo_url_slug_it = $slugs['slug_it'];
 
             $Section->save();
             return redirect()->action('SectionsController@edit', [$webmasterId, $id])->with('doneMessage',

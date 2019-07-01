@@ -178,9 +178,13 @@ class TopicsController extends Controller
             $Topic->row_no = $next_nor_no;
             $Topic->title_ar = $request->title_ar;
             $Topic->title_en = $request->title_en;
+            $Topic->title_ru = $request->title_ru;
+            $Topic->title_it = $request->title_it;
 
             $Topic->details_ar = $request->details_ar;
             $Topic->details_en = $request->details_en;
+            $Topic->details_ru = $request->details_ru;
+            $Topic->details_it = $request->details_it;
             $Topic->date = $request->date;
             if (@$request->expire_date != "") {
                 $Topic->expire_date = $request->expire_date;
@@ -207,15 +211,21 @@ class TopicsController extends Controller
             // Meta title
             $Topic->seo_title_ar = $request->title_ar;
             $Topic->seo_title_en = $request->title_en;
+            $Topic->seo_title_ru = $request->title_ru;
+            $Topic->seo_title_it = $request->title_it;
 
             // URL Slugs
             $slugs = Helper::URLSlug($request->title_ar, $request->title_en, "topic", 0);
             $Topic->seo_url_slug_ar = $slugs['slug_ar'];
             $Topic->seo_url_slug_en = $slugs['slug_en'];
+            $Topic->seo_url_slug_ru = $slugs['slug_ru'];
+            $Topic->seo_url_slug_it = $slugs['slug_it'];
 
             // Meta Description
             $Topic->seo_description_ar = mb_substr(strip_tags(stripslashes($request->details_ar)), 0, 165, 'UTF-8');
             $Topic->seo_description_en = mb_substr(strip_tags(stripslashes($request->details_en)), 0, 165, 'UTF-8');
+            $Topic->seo_description_ru = mb_substr(strip_tags(stripslashes($request->details_ru)), 0, 165, 'UTF-8');
+            $Topic->seo_description_it = mb_substr(strip_tags(stripslashes($request->details_it)), 0, 165, 'UTF-8');
 
 
             $Topic->save();
@@ -415,8 +425,12 @@ class TopicsController extends Controller
 
                 $Topic->title_ar = $request->title_ar;
                 $Topic->title_en = $request->title_en;
+                $Topic->title_ru = $request->title_ru;
+                $Topic->title_it = $request->title_it;
                 $Topic->details_ar = $request->details_ar;
                 $Topic->details_en = $request->details_en;
+                $Topic->details_ru = $request->details_ru;
+                $Topic->details_it = $request->details_it;
                 $Topic->date = $request->date;
                 if (@$request->expire_date != "" || $Topic->date != "") {
                     $Topic->expire_date = @$request->expire_date;
@@ -736,16 +750,24 @@ class TopicsController extends Controller
 
                 $Topic->seo_title_ar = $request->seo_title_ar;
                 $Topic->seo_title_en = $request->seo_title_en;
+                $Topic->seo_title_ru = $request->seo_title_ru;
+                $Topic->seo_title_it = $request->seo_title_it;
                 $Topic->seo_description_ar = $request->seo_description_ar;
                 $Topic->seo_description_en = $request->seo_description_en;
+                $Topic->seo_description_ru = $request->seo_description_ru;
+                $Topic->seo_description_it = $request->seo_description_it;
                 $Topic->seo_keywords_ar = $request->seo_keywords_ar;
                 $Topic->seo_keywords_en = $request->seo_keywords_en;
+                $Topic->seo_keywords_ru = $request->seo_keywords_ru;
+                $Topic->seo_keywords_it = $request->seo_keywords_it;
                 $Topic->updated_by = Auth::user()->id;
 
                 //URL Slugs
                 $slugs = Helper::URLSlug($request->seo_url_slug_ar, $request->seo_url_slug_en, "topic", $id);
                 $Topic->seo_url_slug_ar = $slugs['slug_ar'];
                 $Topic->seo_url_slug_en = $slugs['slug_en'];
+                $Topic->seo_url_slug_ru = $slugs['seo_url_slug_ru'];
+                $Topic->seo_url_slug_it = $slugs['seo_url_slug_it'];
 
                 $Topic->save();
                 return redirect()->action('TopicsController@edit', [$webmasterId, $id])->with('doneMessage',
@@ -1227,8 +1249,12 @@ class TopicsController extends Controller
             $Map->latitude = $request->latitude;
             $Map->title_ar = $request->title_ar;
             $Map->title_en = $request->title_en;
+            $Map->title_ru = $request->title_ru;
+            $Map->title_it = $request->title_it;
             $Map->details_ar = $request->details_ar;
             $Map->details_en = $request->details_en;
+            $Map->details_ru = $request->details_ru;
+            $Map->details_it = $request->details_it;
             $Map->icon = $request->icon;
             $Map->topic_id = $id;
             $Map->status = 1;
@@ -1300,8 +1326,12 @@ class TopicsController extends Controller
                 $Map->latitude = $request->latitude;
                 $Map->title_ar = $request->title_ar;
                 $Map->title_en = $request->title_en;
+                $Map->title_ru = $request->title_ru;
+                $Map->title_it = $request->title_it;
                 $Map->details_ar = $request->details_ar;
                 $Map->details_en = $request->details_en;
+                $Map->details_ru = $request->details_ru;
+                $Map->details_it = $request->details_it;
                 $Map->icon = $request->icon;
                 $Map->status = $request->status;
                 $Map->updated_by = Auth::user()->id;
@@ -1486,6 +1516,8 @@ class TopicsController extends Controller
                 $AttachFile->row_no = $next_nor_no;
                 $AttachFile->title_ar = $request->title_ar;
                 $AttachFile->title_en = $request->title_en;
+                $AttachFile->title_ru = $request->title_ru;
+                $AttachFile->title_it = $request->title_it;
                 $AttachFile->file = $fileFinalName;
                 $AttachFile->created_by = Auth::user()->id;
                 $AttachFile->save();
@@ -1568,6 +1600,8 @@ class TopicsController extends Controller
 
                 $AttachFile->title_ar = $request->title_ar;
                 $AttachFile->title_en = $request->title_en;
+                $AttachFile->title_ru = $request->title_ru;
+                $AttachFile->title_it = $request->title_it;
                 if ($fileFinalName != "") {
                     $AttachFile->file = $fileFinalName;
                 }
