@@ -107,6 +107,8 @@ class WebmasterSectionsController extends Controller
         $slugs = Helper::URLSlug($request->name, $request->name, "section", 0);
         $WebmasterSection->seo_url_slug_ar = $slugs['slug_ar'];
         $WebmasterSection->seo_url_slug_en = $slugs['slug_en'];
+        $WebmasterSection->seo_url_slug_ru = $slugs['slug_ru'];
+        $WebmasterSection->seo_url_slug_it = $slugs['slug_it'];
 
 
         $WebmasterSection->save();
@@ -198,16 +200,24 @@ class WebmasterSectionsController extends Controller
 
             $WebmasterSection->seo_title_ar = $request->seo_title_ar;
             $WebmasterSection->seo_title_en = $request->seo_title_en;
+            $WebmasterSection->seo_title_ru = $request->seo_title_ru;
+            $WebmasterSection->seo_title_it = $request->seo_title_it;
             $WebmasterSection->seo_description_ar = $request->seo_description_ar;
             $WebmasterSection->seo_description_en = $request->seo_description_en;
+            $WebmasterSection->seo_description_ru = $request->seo_description_ru;
+            $WebmasterSection->seo_description_it = $request->seo_description_it;
             $WebmasterSection->seo_keywords_ar = $request->seo_keywords_ar;
             $WebmasterSection->seo_keywords_en = $request->seo_keywords_en;
+            $WebmasterSection->seo_keywords_ru = $request->seo_keywords_ru;
+            $WebmasterSection->seo_keywords_it = $request->seo_keywords_it;
             $WebmasterSection->updated_by = Auth::user()->id;
 
             //URL Slugs
             $slugs = Helper::URLSlug($request->seo_url_slug_ar, $request->seo_url_slug_en, "section", $id);
             $WebmasterSection->seo_url_slug_ar = $slugs['slug_ar'];
             $WebmasterSection->seo_url_slug_en = $slugs['slug_en'];
+            $WebmasterSection->seo_url_slug_ru = $slugs['slug_ru'];
+            $WebmasterSection->seo_url_slug_it = $slugs['slug_it'];
 
             $WebmasterSection->save();
             return redirect()->action('WebmasterSectionsController@edit', $id)->with('doneMessage',
@@ -494,9 +504,13 @@ class WebmasterSectionsController extends Controller
             $WebmasterSectionField->row_no = $next_nor_no;
             $WebmasterSectionField->title_ar = $request->title_ar;
             $WebmasterSectionField->title_en = $request->title_en;
+            $WebmasterSectionField->title_ru = $request->title_ru;
+            $WebmasterSectionField->title_it = $request->title_it;
             $WebmasterSectionField->default_value = $request->default_value;
             $WebmasterSectionField->details_ar = $request->details_ar;
             $WebmasterSectionField->details_en = $request->details_en;
+            $WebmasterSectionField->details_ru = $request->details_ru;
+            $WebmasterSectionField->details_it = $request->details_it;
             $WebmasterSectionField->lang_code = $request->lang_code;
             $WebmasterSectionField->type = $request->type;
             $WebmasterSectionField->required = $request->required;
@@ -558,9 +572,13 @@ class WebmasterSectionsController extends Controller
 
                 $WebmasterSectionField->title_ar = $request->title_ar;
                 $WebmasterSectionField->title_en = $request->title_en;
+                $WebmasterSectionField->title_ru = $request->title_ru;
+                $WebmasterSectionField->title_it = $request->title_it;
                 $WebmasterSectionField->default_value = $request->default_value;
                 $WebmasterSectionField->details_ar = $request->details_ar;
                 $WebmasterSectionField->details_en = $request->details_en;
+                $WebmasterSectionField->details_ru = $request->details_ru;
+                $WebmasterSectionField->details_it= $request->details_it;
                 $WebmasterSectionField->lang_code = $request->lang_code;
                 $WebmasterSectionField->type = $request->type;
                 $WebmasterSectionField->required = $request->required;

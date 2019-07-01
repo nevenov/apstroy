@@ -293,6 +293,8 @@ class HomeController extends Controller
                 $Topics = Topic::where('created_by', '=', Auth::user()->id)->where('title_ar', 'like',
                     '%' . $request->q . '%')
                     ->orwhere('title_en', 'like', '%' . $request->q . '%')
+                    ->orwhere('title_ru', 'like', '%' . $request->q . '%')
+                    ->orwhere('title_it', 'like', '%' . $request->q . '%')
                     ->orwhere('seo_title_ar', 'like', '%' . $request->q . '%')
                     ->orwhere('seo_title_en', 'like', '%' . $request->q . '%')
                     ->orderby('id', 'desc')->get();
@@ -301,6 +303,8 @@ class HomeController extends Controller
                 $Sections = Section::where('created_by', '=', Auth::user()->id)->where('title_ar', 'like',
                     '%' . $request->q . '%')
                     ->orwhere('title_en', 'like', '%' . $request->q . '%')
+                    ->orwhere('title_ru', 'like', '%' . $request->q . '%')
+                    ->orwhere('title_it', 'like', '%' . $request->q . '%')
                     ->orwhere('seo_title_ar', 'like', '%' . $request->q . '%')
                     ->orwhere('seo_title_en', 'like', '%' . $request->q . '%')
                     ->orderby('id', 'desc')->get();
@@ -332,6 +336,8 @@ class HomeController extends Controller
                 //find Topics
                 $Topics = Topic::where('title_ar', 'like', '%' . $request->q . '%')
                     ->orwhere('title_en', 'like', '%' . $request->q . '%')
+                    ->orwhere('title_ru', 'like', '%' . $request->q . '%')
+                    ->orwhere('title_it', 'like', '%' . $request->q . '%')
                     ->orwhere('seo_title_ar', 'like', '%' . $request->q . '%')
                     ->orwhere('seo_title_en', 'like', '%' . $request->q . '%')
                     ->orderby('id', 'desc')->get();
@@ -339,6 +345,8 @@ class HomeController extends Controller
                 //find Sections
                 $Sections = Section::where('title_ar', 'like', '%' . $request->q . '%')
                     ->orwhere('title_en', 'like', '%' . $request->q . '%')
+                    ->orwhere('title_ru', 'like', '%' . $request->q . '%')
+                    ->orwhere('title_it', 'like', '%' . $request->q . '%')
                     ->orwhere('seo_title_ar', 'like', '%' . $request->q . '%')
                     ->orwhere('seo_title_en', 'like', '%' . $request->q . '%')
                     ->orderby('id', 'desc')->get();

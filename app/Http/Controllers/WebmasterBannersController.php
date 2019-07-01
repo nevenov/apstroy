@@ -184,6 +184,12 @@ class WebmasterBannersController extends Controller
                     if ($Banner->file_en != "") {
                         File::delete($this->getUploadPath() . $Banner->file_en);
                     }
+                    if ($Banner->file_ru != "") {
+                        File::delete($this->getUploadPath() . $Banner->file_ru);
+                    }
+                    if ($Banner->file_it != "") {
+                        File::delete($this->getUploadPath() . $Banner->file_it);
+                    }
                     $Banner->delete();
                 }
             }
@@ -240,6 +246,12 @@ class WebmasterBannersController extends Controller
                                 }
                                 if ($Banner->file_en != "") {
                                     File::delete($this->getUploadPath() . $Banner->file_en);
+                                }
+                                if ($Banner->file_ru != "") {
+                                    File::delete($this->getUploadPath() . $Banner->file_ru);
+                                }
+                                if ($Banner->file_it != "") {
+                                    File::delete($this->getUploadPath() . $Banner->file_it);
                                 }
                                 $Banner->delete();
                             }

@@ -78,6 +78,8 @@ class WebmasterSettingsController extends Controller
 
             $WebmasterSetting->ar_box_status = $request->ar_box_status;
             $WebmasterSetting->en_box_status = $request->en_box_status;
+            $WebmasterSetting->ru_box_status = $request->ru_box_status;
+            $WebmasterSetting->it_box_status = $request->it_box_status;
             $WebmasterSetting->seo_status = $request->seo_status;
             $WebmasterSetting->analytics_status = $request->analytics_status;
             $WebmasterSetting->banners_status = $request->banners_status;
@@ -92,6 +94,8 @@ class WebmasterSettingsController extends Controller
             $WebmasterSetting->default_currency_id = 0; //$request->default_currency_id;
             $WebmasterSetting->languages_ar_status = $request->languages_ar_status;
             $WebmasterSetting->languages_en_status = $request->languages_en_status;
+            $WebmasterSetting->languages_ru_status = $request->languages_ru_status;
+            $WebmasterSetting->languages_it_status = $request->languages_it_status;
             $WebmasterSetting->languages_by_default = $request->languages_by_default;
             $WebmasterSetting->header_menu_id = $request->header_menu_id;
             $WebmasterSetting->footer_menu_id = $request->footer_menu_id;

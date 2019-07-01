@@ -43,14 +43,22 @@ class FrontendHomeController extends Controller
         $site_msg = $WebsiteSettings->close_msg;
         if ($site_status == 0) {
             // close the website
-            if ($lang == "ar") {
-                $site_title = $WebsiteSettings->site_title_ar;
-                $site_desc = $WebsiteSettings->site_desc_ar;
-                $site_keywords = $WebsiteSettings->site_keywords_ar;
-            } else {
+            if ($lang == "en") {
                 $site_title = $WebsiteSettings->site_title_en;
                 $site_desc = $WebsiteSettings->site_desc_en;
                 $site_keywords = $WebsiteSettings->site_keywords_en;
+            } elseif ($lang == "ru") {
+                $site_title = $WebsiteSettings->site_title_ru;
+                $site_desc = $WebsiteSettings->site_desc_ru;
+                $site_keywords = $WebsiteSettings->site_keywords_ru;
+            } elseif ($lang == "it") {
+                $site_title = $WebsiteSettings->site_title_it;
+                $site_desc = $WebsiteSettings->site_desc_it;
+                $site_keywords = $WebsiteSettings->site_keywords_it;
+            } else {
+                $site_title = $WebsiteSettings->site_title_ar;
+                $site_desc = $WebsiteSettings->site_desc_ar;
+                $site_keywords = $WebsiteSettings->site_keywords_ar;
             }
             echo "<!DOCTYPE html>
 <html lang=\"en\">
@@ -122,7 +130,7 @@ class FrontendHomeController extends Controller
         $WebmasterSettings = WebmasterSetting::find(1);
         $URL_Title = "seo_url_slug_" . trans('backLang.boxCode');
 
-        $WebmasterSection1 = WebmasterSection::where("seo_url_slug_ar", $seo_url_slug)->orwhere("seo_url_slug_en", $seo_url_slug)->first();
+        $WebmasterSection1 = WebmasterSection::where("seo_url_slug_ar", $seo_url_slug)->orwhere("seo_url_slug_en", $seo_url_slug)->orwhere("seo_url_slug_ru", $seo_url_slug)->orwhere("seo_url_slug_it", $seo_url_slug)->first();
         if (!empty($WebmasterSection1)) {
             // MAIN SITE SECTION
             $section = $WebmasterSection1->id;
@@ -134,14 +142,14 @@ class FrontendHomeController extends Controller
                 $section = $WebmasterSection2->id;
                 return $this->topics($section, 0);
             } else {
-                $Section = Section::where('status', 1)->where("seo_url_slug_ar", $seo_url_slug)->orwhere("seo_url_slug_en", $seo_url_slug)->first();
+                $Section = Section::where('status', 1)->where("seo_url_slug_ar", $seo_url_slug)->orwhere("seo_url_slug_en", $seo_url_slug)->orwhere("seo_url_slug_ru", $seo_url_slug)->orwhere("seo_url_slug_it", $seo_url_slug)->first();
                 if (!empty($Section)) {
                     // SITE Category
                     $section = $Section->webmaster_id;
                     $cat = $Section->id;
                     return $this->topics($section, $cat);
                 } else {
-                    $Topic = Topic::where('status', 1)->where("seo_url_slug_ar", $seo_url_slug)->orwhere("seo_url_slug_en", $seo_url_slug)->first();
+                    $Topic = Topic::where('status', 1)->where("seo_url_slug_ar", $seo_url_slug)->orwhere("seo_url_slug_en", $seo_url_slug)->orwhere("seo_url_slug_ru", $seo_url_slug)->orwhere("seo_url_slug_it", $seo_url_slug)->first();
                     if (!empty($Topic)) {
                         // SITE Topic
                         $section_id = $Topic->webmaster_id;
@@ -190,9 +198,13 @@ class FrontendHomeController extends Controller
         $FooterMenuLinks_father = Menu::find($WebmasterSettings->footer_menu_id);
         $FooterMenuLinks_name_ar = "";
         $FooterMenuLinks_name_en = "";
+        $FooterMenuLinks_name_ru = "";
+        $FooterMenuLinks_name_it = "";
         if (!empty($FooterMenuLinks_father)) {
             $FooterMenuLinks_name_ar = $FooterMenuLinks_father->title_ar;
             $FooterMenuLinks_name_en = $FooterMenuLinks_father->title_en;
+            $FooterMenuLinks_name_ru = $FooterMenuLinks_father->title_ru;
+            $FooterMenuLinks_name_it = $FooterMenuLinks_father->title_it;
         }
 
         // Home topics
@@ -227,6 +239,8 @@ class FrontendHomeController extends Controller
                 "TextBanners",
                 "FooterMenuLinks_name_ar",
                 "FooterMenuLinks_name_en",
+                "FooterMenuLinks_name_ru",
+                "FooterMenuLinks_name_it",
                 "PageTitle",
                 "PageDescription",
                 "PageKeywords",
@@ -337,9 +351,13 @@ class FrontendHomeController extends Controller
             $FooterMenuLinks_father = Menu::find($WebmasterSettings->footer_menu_id);
             $FooterMenuLinks_name_ar = "";
             $FooterMenuLinks_name_en = "";
+            $FooterMenuLinks_name_ru = "";
+            $FooterMenuLinks_name_it = "";
             if (!empty($FooterMenuLinks_father)) {
                 $FooterMenuLinks_name_ar = $FooterMenuLinks_father->title_ar;
                 $FooterMenuLinks_name_en = $FooterMenuLinks_father->title_en;
+                $FooterMenuLinks_name_ru = $FooterMenuLinks_father->title_ru;
+                $FooterMenuLinks_name_it = $FooterMenuLinks_father->title_it;
             }
             $SideBanners = Banner::where('section_id', $WebmasterSettings->side_banners_section_id)->where('status',
                 1)->orderby('row_no', 'asc')->get();
@@ -388,6 +406,8 @@ class FrontendHomeController extends Controller
                     "WebmasterSettings",
                     "FooterMenuLinks_name_ar",
                     "FooterMenuLinks_name_en",
+                    "FooterMenuLinks_name_ru",
+                    "FooterMenuLinks_name_it",
                     "LatestNews",
                     "SideBanners",
                     "WebmasterSection",
@@ -494,9 +514,13 @@ class FrontendHomeController extends Controller
                 $FooterMenuLinks_father = Menu::find($WebmasterSettings->footer_menu_id);
                 $FooterMenuLinks_name_ar = "";
                 $FooterMenuLinks_name_en = "";
+                $FooterMenuLinks_name_ru = "";
+                $FooterMenuLinks_name_it = "";
                 if (!empty($FooterMenuLinks_father)) {
                     $FooterMenuLinks_name_ar = $FooterMenuLinks_father->title_ar;
                     $FooterMenuLinks_name_en = $FooterMenuLinks_father->title_en;
+                    $FooterMenuLinks_name_ru = $FooterMenuLinks_father->title_ru;
+                    $FooterMenuLinks_name_it = $FooterMenuLinks_father->title_it;
                 }
                 $SideBanners = Banner::where('section_id', $WebmasterSettings->side_banners_section_id)->where('status',
                     1)->orderby('row_no', 'asc')->get();
@@ -534,6 +558,8 @@ class FrontendHomeController extends Controller
                         "WebmasterSettings",
                         "FooterMenuLinks_name_ar",
                         "FooterMenuLinks_name_en",
+                        "FooterMenuLinks_name_ru",
+                        "FooterMenuLinks_name_it",
                         "LatestNews",
                         "Topic",
                         "SideBanners",
@@ -640,9 +666,13 @@ class FrontendHomeController extends Controller
             $FooterMenuLinks_father = Menu::find($WebmasterSettings->footer_menu_id);
             $FooterMenuLinks_name_ar = "";
             $FooterMenuLinks_name_en = "";
+            $FooterMenuLinks_name_ru = "";
+            $FooterMenuLinks_name_it = "";
             if (!empty($FooterMenuLinks_father)) {
                 $FooterMenuLinks_name_ar = $FooterMenuLinks_father->title_ar;
                 $FooterMenuLinks_name_en = $FooterMenuLinks_father->title_en;
+                $FooterMenuLinks_name_ru = $FooterMenuLinks_father->title_ru;
+                $FooterMenuLinks_name_it = $FooterMenuLinks_father->title_it;
             }
             $SideBanners = Banner::where('section_id', $WebmasterSettings->side_banners_section_id)->where('status',
                 1)->orderby('row_no', 'asc')->get();
@@ -667,6 +697,8 @@ class FrontendHomeController extends Controller
                     "WebmasterSettings",
                     "FooterMenuLinks_name_ar",
                     "FooterMenuLinks_name_en",
+                    "FooterMenuLinks_name_ru",
+                    "FooterMenuLinks_name_it",
                     "LatestNews",
                     "User",
                     "SideBanners",
@@ -729,6 +761,8 @@ class FrontendHomeController extends Controller
             // Topics if NO Cat_ID
             $Topics = Topic::where('title_ar', 'like', '%' . $search_word . '%')
                 ->orwhere('title_en', 'like', '%' . $search_word . '%')
+                ->orwhere('title_ru', 'like', '%' . $search_word . '%')
+                ->orwhere('title_it', 'like', '%' . $search_word . '%')
                 ->orwhere('seo_title_ar', 'like', '%' . $search_word . '%')
                 ->orwhere('seo_title_en', 'like', '%' . $search_word . '%')
                 ->orwhere('details_ar', 'like', '%' . $search_word . '%')
@@ -743,9 +777,13 @@ class FrontendHomeController extends Controller
             $FooterMenuLinks_father = Menu::find($WebmasterSettings->footer_menu_id);
             $FooterMenuLinks_name_ar = "";
             $FooterMenuLinks_name_en = "";
+            $FooterMenuLinks_name_ru = "";
+            $FooterMenuLinks_name_it = "";
             if (!empty($FooterMenuLinks_father)) {
                 $FooterMenuLinks_name_ar = $FooterMenuLinks_father->title_ar;
                 $FooterMenuLinks_name_en = $FooterMenuLinks_father->title_en;
+                $FooterMenuLinks_name_ru = $FooterMenuLinks_father->title_ru;
+                $FooterMenuLinks_name_it = $FooterMenuLinks_father->title_it;
             }
             $SideBanners = Banner::where('section_id', $WebmasterSettings->side_banners_section_id)->where('status',
                 1)->orderby('row_no', 'asc')->get();
@@ -770,6 +808,8 @@ class FrontendHomeController extends Controller
                     "WebmasterSettings",
                     "FooterMenuLinks_name_ar",
                     "FooterMenuLinks_name_en",
+                    "FooterMenuLinks_name_ru",
+                    "FooterMenuLinks_name_it",
                     "LatestNews",
                     "search_word",
                     "SideBanners",
@@ -846,9 +886,13 @@ class FrontendHomeController extends Controller
                 $FooterMenuLinks_father = Menu::find($WebmasterSettings->footer_menu_id);
                 $FooterMenuLinks_name_ar = "";
                 $FooterMenuLinks_name_en = "";
+                $FooterMenuLinks_name_ru = "";
+                $FooterMenuLinks_name_it = "";
                 if (!empty($FooterMenuLinks_father)) {
                     $FooterMenuLinks_name_ar = $FooterMenuLinks_father->title_ar;
                     $FooterMenuLinks_name_en = $FooterMenuLinks_father->title_en;
+                    $FooterMenuLinks_name_ru = $FooterMenuLinks_father->title_ru;
+                    $FooterMenuLinks_name_it = $FooterMenuLinks_father->title_it;
                 }
                 $SideBanners = Banner::where('section_id', $WebmasterSettings->side_banners_section_id)->where('status',
                     1)->orderby('row_no', 'asc')->get();
@@ -885,6 +929,8 @@ class FrontendHomeController extends Controller
                         "WebmasterSettings",
                         "FooterMenuLinks_name_ar",
                         "FooterMenuLinks_name_en",
+                        "FooterMenuLinks_name_ru",
+                        "FooterMenuLinks_name_it",
                         "LatestNews",
                         "Topic",
                         "SideBanners",

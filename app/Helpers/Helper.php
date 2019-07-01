@@ -486,7 +486,7 @@ class Helper
         if ($Check_SEO_st_en) {
             $en_slug = $seo_url_slug_en;
         }
-        return array("slug_ar" => $ar_slug, "slug_en" => $en_slug);
+        return array("slug_ar" => $ar_slug, "slug_en" => $en_slug, "slug_ru" => $en_slug, "slug_it" => $en_slug);
     }
 
 }
