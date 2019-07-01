@@ -405,6 +405,46 @@
                             </div>
 
                             <div class="form-group">
+                                <label>{{ trans('backLang.russianLanguageFields') }} : </label>
+                                <div class="radio">
+                                    <div>
+                                        <label class="ui-check ui-check-md">
+                                            {!! Form::radio('ru_box_status','1',$WebmasterSetting->ru_box_status ? true : false , array('id' => 'ru_box_status1','class'=>'has-value')) !!}
+                                            <i class="dark-white"></i>
+                                            {{ trans('backLang.active') }}
+                                        </label>
+                                    </div>
+                                    <div style="margin-top: 5px;">
+                                        <label class="ui-check ui-check-md">
+                                            {!! Form::radio('ru_box_status','0',$WebmasterSetting->ru_box_status ? false : true , array('id' => 'ru_box_status2','class'=>'has-value')) !!}
+                                            <i class="dark-white"></i>
+                                            {{ trans('backLang.notActive') }}
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label>{{ trans('backLang.italianLanguageFields') }} : </label>
+                                <div class="radio">
+                                    <div>
+                                        <label class="ui-check ui-check-md">
+                                            {!! Form::radio('it_box_status','1',$WebmasterSetting->it_box_status ? true : false , array('id' => 'it_box_status1','class'=>'has-value')) !!}
+                                            <i class="dark-white"></i>
+                                            {{ trans('backLang.active') }}
+                                        </label>
+                                    </div>
+                                    <div style="margin-top: 5px;">
+                                        <label class="ui-check ui-check-md">
+                                            {!! Form::radio('it_box_status','0',$WebmasterSetting->it_box_status ? false : true , array('id' => 'it_box_status2','class'=>'has-value')) !!}
+                                            <i class="dark-white"></i>
+                                            {{ trans('backLang.notActive') }}
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
                                 <label>{{ trans('backLang.activeLanguages') }} : </label>
                                 <div class="radio">
                                     <div>
@@ -419,6 +459,20 @@
                                             {!! Form::checkbox('languages_en_status','1',($WebmasterSetting->languages_en_status == 1) ? true : false , array('id' => 'languages_en_status','class'=>'has-value')) !!}
                                             <i class="dark-white"></i>
                                             {!!  trans('backLang.englishBox') !!}
+                                        </label>
+                                    </div>
+                                    <div style="margin-top: 5px;">
+                                        <label class="ui-check ui-check-md">
+                                            {!! Form::checkbox('languages_ru_status','1',($WebmasterSetting->languages_ru_status == 1) ? true : false , array('id' => 'languages_ru_status','class'=>'has-value')) !!}
+                                            <i class="dark-white"></i>
+                                            {!!  trans('backLang.russianBox') !!}
+                                        </label>
+                                    </div>
+                                    <div style="margin-top: 5px;">
+                                        <label class="ui-check ui-check-md">
+                                            {!! Form::checkbox('languages_it_status','1',($WebmasterSetting->languages_it_status == 1) ? true : false , array('id' => 'languages_it_status','class'=>'has-value')) !!}
+                                            <i class="dark-white"></i>
+                                            {!!  trans('backLang.italianBox') !!}
                                         </label>
                                     </div>
                                 </div>

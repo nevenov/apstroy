@@ -17,6 +17,8 @@ class WebmasterSettingsSeeder extends Seeder
         $settings = new WebmasterSetting();
         $settings->ar_box_status = true;
         $settings->en_box_status = true;
+        $settings->ru_box_status = true;
+        $settings->it_box_status = true;
         $settings->seo_status = true;
         $settings->analytics_status = true;
         $settings->banners_status = true;
@@ -32,6 +34,8 @@ class WebmasterSettingsSeeder extends Seeder
         $settings->languages_ar_status = "2";
         $settings->languages_ar_status = true;
         $settings->languages_en_status = true;
+        $settings->languages_ru_status = true;
+        $settings->languages_it_status = true;
         $settings->languages_by_default = "en";
 
         $settings->header_menu_id = "1";

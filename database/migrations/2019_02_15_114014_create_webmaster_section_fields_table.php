@@ -19,9 +19,13 @@ class CreateWebmasterSectionFieldsTable extends Migration
             $table->integer('type');
             $table->string('title_ar')->nullable();
             $table->string('title_en')->nullable();
+            $table->string('title_ru')->nullable();
+            $table->string('title_it')->nullable();
             $table->string('default_value')->nullable();
             $table->text('details_ar')->nullable();
             $table->text('details_en')->nullable();
+            $table->text('details_ru')->nullable();
+            $table->text('details_it')->nullable();
             $table->integer('row_no');
             $table->tinyInteger('status');
             $table->tinyInteger('required');

@@ -15,7 +15,7 @@ class CountriesSeeder extends Seeder
         //
         $newCountry = new Country();
         $newCountry->code = "AL";
-        $newCountry->title_ar = "ألبانيا";
+        $newCountry->title_ar = "Albania";
         $newCountry->title_en = "Albania";
         $newCountry->tel = "355";
         $newCountry->save();
@@ -23,7 +23,7 @@ class CountriesSeeder extends Seeder
 
         $newCountry = new Country();
         $newCountry->code = "DZ";
-        $newCountry->title_ar = "الجزائر";
+        $newCountry->title_ar = "Algeria";
         $newCountry->title_en = "Algeria";
         $newCountry->tel = "213";
         $newCountry->save();
@@ -31,7 +31,7 @@ class CountriesSeeder extends Seeder
 
         $newCountry = new Country();
         $newCountry->code = "AS";
-        $newCountry->title_ar = "ساموا الأمريكية";
+        $newCountry->title_ar = "American Samoa";
         $newCountry->title_en = "American Samoa";
         $newCountry->tel = "1-684";
         $newCountry->save();
@@ -39,7 +39,7 @@ class CountriesSeeder extends Seeder
 
         $newCountry = new Country();
         $newCountry->code = "AD";
-        $newCountry->title_ar = "أندورا";
+        $newCountry->title_ar = "Andorra";
         $newCountry->title_en = "Andorra";
         $newCountry->tel = "376";
         $newCountry->save();
@@ -47,7 +47,7 @@ class CountriesSeeder extends Seeder
 
         $newCountry = new Country();
         $newCountry->code = "AO";
-        $newCountry->title_ar = "أنغولا";
+        $newCountry->title_ar = "Angola";
         $newCountry->title_en = "Angola";
         $newCountry->tel = "244";
         $newCountry->save();
@@ -247,8 +247,10 @@ class CountriesSeeder extends Seeder
 
         $newCountry = new Country();
         $newCountry->code = "BG";
-        $newCountry->title_ar = "بلغاريا";
+        $newCountry->title_ar = "Bulgaria";
         $newCountry->title_en = "Bulgaria";
+        $newCountry->title_ru = "Bulgaria";
+        $newCountry->title_it = "Bulgaria";
         $newCountry->tel = "359";
         $newCountry->save();
 
@@ -767,8 +769,10 @@ class CountriesSeeder extends Seeder
 
         $newCountry = new Country();
         $newCountry->code = "IT";
-        $newCountry->title_ar = "إيطاليا";
+        $newCountry->title_ar = "Italy";
         $newCountry->title_en = "Italy";
+        $newCountry->title_ru = "Italy";
+        $newCountry->title_it = "Italy";
         $newCountry->tel = "39";
         $newCountry->save();
 
@@ -1287,8 +1291,10 @@ class CountriesSeeder extends Seeder
 
         $newCountry = new Country();
         $newCountry->code = "RU";
-        $newCountry->title_ar = "الفيدرالية الروسية";
+        $newCountry->title_ar = "Russian Federation";
         $newCountry->title_en = "Russian Federation";
+        $newCountry->title_ru = "Russian Federation";
+        $newCountry->title_it = "Russian Federation";
         $newCountry->tel = "7";
         $newCountry->save();
 
@@ -1655,16 +1661,20 @@ class CountriesSeeder extends Seeder
 
         $newCountry = new Country();
         $newCountry->code = "GB";
-        $newCountry->title_ar = "المملكة المتحدة";
+        $newCountry->title_ar = "United Kingdom";
         $newCountry->title_en = "United Kingdom";
+        $newCountry->title_ru = "United Kingdom";
+        $newCountry->title_it = "United Kingdom";
         $newCountry->tel = "44";
         $newCountry->save();
 
 
         $newCountry = new Country();
         $newCountry->code = "US";
-        $newCountry->title_ar = "الولايات المتحدة الأمريكية";
+        $newCountry->title_ar = "United States of America";
         $newCountry->title_en = "United States of America";
+        $newCountry->title_ru = "United States of America";
+        $newCountry->title_it = "United States of America";
         $newCountry->tel = "1";
         $newCountry->save();
 
