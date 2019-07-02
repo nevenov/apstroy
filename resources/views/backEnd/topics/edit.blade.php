@@ -396,7 +396,7 @@
                                         </label>
                                         <div class="col-sm-10">
                                             <div class="box p-a-xs">
-                                                {!! Form::textarea('details_ru',$Topics->details_en, array('ui-jp'=>'summernote','placeholder' => '','class' => 'form-control summernote_ru', 'dir'=>trans('backLang.ltr'),'ui-options'=>'{height: 300,callbacks: {
+                                                {!! Form::textarea('details_ru',$Topics->details_ru, array('ui-jp'=>'summernote','placeholder' => '','class' => 'form-control summernote_ru', 'dir'=>trans('backLang.ltr'),'ui-options'=>'{height: 300,callbacks: {
         onImageUpload: function(files, editor, welEditable) {
             sendFile(files[0], editor, welEditable,1);
         }
@@ -703,21 +703,35 @@
                                 $cf_land_identifier = "";
                                 $cf_land_active = false;
                                 $cf_land_dir = trans('backLang.direction');
-                                if (Helper::GeneralWebmasterSettings("ar_box_status") && Helper::GeneralWebmasterSettings("en_box_status")) {
-                                    if ($customField->lang_code == "ar") {
-                                        $cf_land_identifier = trans('backLang.arabicBox');
-                                    } elseif ($customField->lang_code == "en") {
-                                        $cf_land_identifier = trans('backLang.englishBox');
-                                    }
+                                if ($customField->lang_code == "ar") {
+                                    $cf_land_identifier = trans('backLang.arabicBox');
+                                } elseif ($customField->lang_code == "en") {
+                                    $cf_land_identifier = trans('backLang.englishBox');
+                                } elseif ($customField->lang_code == "ru") {
+                                    $cf_land_identifier = trans('backLang.russianBox');
+                                } elseif ($customField->lang_code == "it") {
+                                    $cf_land_identifier = trans('backLang.italianBox');
                                 }
+
                                 if (Helper::GeneralWebmasterSettings("ar_box_status") && $customField->lang_code == "ar") {
                                     $cf_land_active = true;
-                                    $cf_land_dir = "rtl";
+                                    $cf_land_dir = "ltr";
                                 }
                                 if (Helper::GeneralWebmasterSettings("en_box_status") && $customField->lang_code == "en") {
                                     $cf_land_active = true;
                                     $cf_land_dir = "ltr";
                                 }
+
+                                if (Helper::GeneralWebmasterSettings("ru_box_status") && $customField->lang_code == "ru") {
+                                    $cf_land_active = true;
+                                    $cf_land_dir = "ltr";
+                                }
+
+                                if (Helper::GeneralWebmasterSettings("it_box_status") && $customField->lang_code == "it") {
+                                    $cf_land_active = true;
+                                    $cf_land_dir = "ltr";
+                                }
+
                                 if ($customField->lang_code == "all") {
                                     $cf_land_active = true;
                                 }
@@ -1549,7 +1563,7 @@
                                                     @if(Helper::GeneralWebmasterSettings("ar_box_status") && Helper::GeneralWebmasterSettings("en_box_status")){!!  trans('backLang.arabicBox') !!}@endif
                                                 </label>
                                                 <div class="col-sm-10">
-                                                    {!! Form::text('title_ar','', array('placeholder' => '','class' => 'form-control','id'=>'file_title_ar','required'=>'', 'dir'=>trans('backLang.rtl'))) !!}
+                                                    {!! Form::text('title_ar','', array('placeholder' => '','class' => 'form-control','id'=>'file_title_ar','required'=>'', 'dir'=>trans('backLang.ltr'))) !!}
                                                 </div>
                                             </div>
                                         @endif
@@ -1610,7 +1624,7 @@
                                                     @if(Helper::GeneralWebmasterSettings("ar_box_status") && Helper::GeneralWebmasterSettings("en_box_status")){!!  trans('backLang.arabicBox') !!}@endif
                                                 </label>
                                                 <div class="col-sm-10">
-                                                    {!! Form::text('title_ar',Session::get('AttachFile')->title_ar, array('placeholder' => '','class' => 'form-control','id'=>'file_title_ar','required'=>'', 'dir'=>trans('backLang.rtl'))) !!}
+                                                    {!! Form::text('title_ar',Session::get('AttachFile')->title_ar, array('placeholder' => '','class' => 'form-control','id'=>'file_title_ar','required'=>'', 'dir'=>trans('backLang.ltr'))) !!}
                                                 </div>
                                             </div>
                                         @endif
@@ -2102,7 +2116,7 @@
                                                         {!!  trans('backLang.arabicBox') !!}
                                                     </label>
                                                     <div class="col-sm-9">
-                                                        {!! Form::text('title_ar',Session::get('Map')->title_ar, array('placeholder' => '','class' => 'form-control','id'=>'title_ar', 'dir'=>trans('backLang.rtl'))) !!}
+                                                        {!! Form::text('title_ar',Session::get('Map')->title_ar, array('placeholder' => '','class' => 'form-control','id'=>'title_ar', 'dir'=>trans('backLang.ltr'))) !!}
                                                     </div>
                                                 </div>
                                             @endif
@@ -2148,7 +2162,7 @@
                                                         {!!  trans('backLang.arabicBox') !!}
                                                     </label>
                                                     <div class="col-sm-9">
-                                                        {!! Form::textarea('details_ar',Session::get('Map')->details_ar, array('placeholder' => '','class' => 'form-control','id'=>'details_ar','rows'=>'3', 'dir'=>trans('backLang.rtl'))) !!}
+                                                        {!! Form::textarea('details_ar',Session::get('Map')->details_ar, array('placeholder' => '','class' => 'form-control','id'=>'details_ar','rows'=>'3', 'dir'=>trans('backLang.ltr'))) !!}
                                                     </div>
                                                 </div>
                                             @endif
@@ -2306,7 +2320,7 @@
                                                                         @if(Helper::GeneralWebmasterSettings("ar_box_status") && Helper::GeneralWebmasterSettings("en_box_status")){!!  trans('backLang.arabicBox') !!}@endif
                                                                     </label>
                                                                     <div class="col-sm-9">
-                                                                        {!! Form::text('title_ar','', array('placeholder' => '','class' => 'form-control','id'=>'title_ar', 'dir'=>trans('backLang.rtl'))) !!}
+                                                                        {!! Form::text('title_ar','', array('placeholder' => '','class' => 'form-control','id'=>'title_ar', 'dir'=>trans('backLang.ltr'))) !!}
                                                                     </div>
                                                                 </div>
                                                             @endif
@@ -2329,7 +2343,7 @@
                                                                         @if(Helper::GeneralWebmasterSettings("ar_box_status") && Helper::GeneralWebmasterSettings("en_box_status")){!!  trans('backLang.arabicBox') !!}@endif
                                                                     </label>
                                                                     <div class="col-sm-9">
-                                                                        {!! Form::textarea('details_ar','', array('placeholder' => '','class' => 'form-control','id'=>'details_ar','rows'=>'3', 'dir'=>trans('backLang.rtl'))) !!}
+                                                                        {!! Form::textarea('details_ar','', array('placeholder' => '','class' => 'form-control','id'=>'details_ar','rows'=>'3', 'dir'=>trans('backLang.ltr'))) !!}
                                                                     </div>
                                                                 </div>
                                                             @endif
@@ -2646,10 +2660,9 @@
                                         <div class="form-group">
                                             <div>
                                                 <small>{!!  trans('backLang.topicSEOTitle') !!}</small>
-                                                @if(Helper::GeneralWebmasterSettings("ar_box_status") && Helper::GeneralWebmasterSettings("en_box_status"))
-                                                    <small>{!!  trans('backLang.arabicBox') !!}</small> @endif
+                                                <small>{!!  trans('backLang.arabicBox') !!}</small>
 
-                                                {!! Form::text('seo_title_ar',$Topics->seo_title_ar, array('class' => 'form-control','id'=>'seo_title_ar','maxlength'=>'65', 'dir'=>trans('backLang.rtl'))) !!}
+                                                {!! Form::text('seo_title_ar',$Topics->seo_title_ar, array('class' => 'form-control','id'=>'seo_title_ar','maxlength'=>'65', 'dir'=>trans('backLang.ltr'))) !!}
                                             </div>
                                         </div>
                                     @endif
@@ -2658,10 +2671,9 @@
                                         <div class="form-group">
                                             <div>
                                                 <small>{!!  trans('backLang.friendlyURL') !!}</small>
-                                                @if(Helper::GeneralWebmasterSettings("ar_box_status") && Helper::GeneralWebmasterSettings("en_box_status"))
-                                                    <small>{!!  trans('backLang.arabicBox') !!}</small> @endif
+                                                <small>{!!  trans('backLang.arabicBox') !!}</small>
 
-                                                {!! Form::text('seo_url_slug_ar',$Topics->seo_url_slug_ar, array('class' => 'form-control','id'=>'seo_url_slug_ar', 'dir'=>trans('backLang.rtl'))) !!}
+                                                {!! Form::text('seo_url_slug_ar',$Topics->seo_url_slug_ar, array('class' => 'form-control','id'=>'seo_url_slug_ar', 'dir'=>trans('backLang.ltr'))) !!}
                                             </div>
                                         </div>
                                     @endif
@@ -2670,10 +2682,9 @@
                                         <div class="form-group">
                                             <div>
                                                 <small>{!!  trans('backLang.topicSEODesc') !!}</small>
-                                                @if(Helper::GeneralWebmasterSettings("ar_box_status") && Helper::GeneralWebmasterSettings("en_box_status"))
-                                                    <small>{!!  trans('backLang.arabicBox') !!}</small> @endif
+                                                <small>{!!  trans('backLang.arabicBox') !!}</small>
 
-                                                {!! Form::textarea('seo_description_ar',$Topics->seo_description_ar, array('class' => 'form-control','id'=>'seo_description_ar','maxlength'=>'165', 'dir'=>trans('backLang.rtl'),'rows'=>'2')) !!}
+                                                {!! Form::textarea('seo_description_ar',$Topics->seo_description_ar, array('class' => 'form-control','id'=>'seo_description_ar','maxlength'=>'165', 'dir'=>trans('backLang.ltr'),'rows'=>'2')) !!}
                                             </div>
                                         </div>
                                     @endif
@@ -2682,10 +2693,9 @@
                                         <div class="form-group">
                                             <div>
                                                 <small>{!!  trans('backLang.topicSEOKeywords') !!}</small>
-                                                @if(Helper::GeneralWebmasterSettings("ar_box_status") && Helper::GeneralWebmasterSettings("en_box_status"))
-                                                    <small>{!!  trans('backLang.arabicBox') !!}</small>@endif
+                                                <small>{!!  trans('backLang.arabicBox') !!}</small>
 
-                                                {!! Form::textarea('seo_keywords_ar',$Topics->seo_keywords_ar, array('class' => 'form-control','id'=>'seo_keywords_ar', 'dir'=>trans('backLang.rtl'),'rows'=>'2')) !!}
+                                                {!! Form::textarea('seo_keywords_ar',$Topics->seo_keywords_ar, array('class' => 'form-control','id'=>'seo_keywords_ar', 'dir'=>trans('backLang.ltr'),'rows'=>'2')) !!}
                                             </div>
                                         </div>
                                         <br>
@@ -2712,10 +2722,9 @@
                                         ?>
                                         <div class="form-group">
                                             <div>
-                                                @if(Helper::GeneralWebmasterSettings("ar_box_status") && Helper::GeneralWebmasterSettings("en_box_status"))
-                                                    <small>{!!  trans('backLang.arabicBox') !!}</small> @endif
+                                                <small>{!!  trans('backLang.arabicBox') !!}</small>
                                                 &nbsp;
-                                                <div class="search-example" dir="rtl">
+                                                <div class="search-example" dir="ltr">
                                                     <a id="title_in_engines_ar" href="{{ $seo_example_url }}"
                                                        target="_blank">{{ $seo_example_title }}</a>
                                                     <span id="url_in_engines_ar">{{ $seo_example_url }}</span>
@@ -2741,8 +2750,7 @@
                                         <div class="form-group">
                                             <div>
                                                 <small>{!!  trans('backLang.topicSEOTitle') !!}</small>
-                                                @if(Helper::GeneralWebmasterSettings("ar_box_status") && Helper::GeneralWebmasterSettings("en_box_status"))
-                                                    <small>{!!  trans('backLang.englishBox') !!}</small> @endif
+                                                <small>{!!  trans('backLang.englishBox') !!}</small>
 
                                                 {!! Form::text('seo_title_en',$Topics->seo_title_en, array('class' => 'form-control','id'=>'seo_title_en','maxlength'=>'65', 'dir'=>trans('backLang.ltr'))) !!}
                                             </div>
@@ -2752,8 +2760,7 @@
                                         <div class="form-group">
                                             <div>
                                                 <small>{!!  trans('backLang.friendlyURL') !!}</small>
-                                                @if(Helper::GeneralWebmasterSettings("ar_box_status") && Helper::GeneralWebmasterSettings("en_box_status"))
-                                                    <small>{!!  trans('backLang.englishBox') !!}</small> @endif
+                                                <small>{!!  trans('backLang.englishBox') !!}</small>
 
                                                 {!! Form::text('seo_url_slug_en',$Topics->seo_url_slug_en, array('class' => 'form-control','id'=>'seo_url_slug_en', 'dir'=>trans('backLang.ltr'))) !!}
                                             </div>
@@ -2764,8 +2771,7 @@
                                         <div class="form-group">
                                             <div>
                                                 <small>{!!  trans('backLang.topicSEODesc') !!}</small>
-                                                @if(Helper::GeneralWebmasterSettings("ar_box_status") && Helper::GeneralWebmasterSettings("en_box_status"))
-                                                    <small>{!!  trans('backLang.englishBox') !!}</small> @endif
+                                                <small>{!!  trans('backLang.englishBox') !!}</small>
 
                                                 {!! Form::textarea('seo_description_en',$Topics->seo_description_en, array('class' => 'form-control','id'=>'seo_description_en','maxlength'=>'165', 'dir'=>trans('backLang.ltr'),'rows'=>'2')) !!}
                                             </div>
@@ -2775,8 +2781,7 @@
                                         <div class="form-group">
                                             <div>
                                                 <small>{!!  trans('backLang.topicSEOKeywords') !!}</small>
-                                                @if(Helper::GeneralWebmasterSettings("ar_box_status") && Helper::GeneralWebmasterSettings("en_box_status"))
-                                                    <small>{!!  trans('backLang.englishBox') !!}</small> @endif
+                                                <small>{!!  trans('backLang.englishBox') !!}</small>
 
                                                 {!! Form::textarea('seo_keywords_en',$Topics->seo_keywords_en, array('class' => 'form-control','id'=>'seo_keywords_en', 'dir'=>trans('backLang.ltr'),'rows'=>'2')) !!}
                                             </div>
@@ -2784,15 +2789,6 @@
                                     @endif
 
 
-                                    <div class="form-group">
-                                        <div>
-                                            <button type="submit" class="btn btn-primary m-t"><i class="material-icons">
-                                                    &#xe31b;</i> {!! trans('backLang.update') !!}</button>
-                                            <a href="{{ route('topics',$WebmasterSection->id) }}"
-                                               class="btn btn-default m-t"><i class="material-icons">
-                                                    &#xe5cd;</i> {!! trans('backLang.cancel') !!}</a>
-                                        </div>
-                                    </div>
                                     <br>
                                     <br>
 
@@ -2817,8 +2813,7 @@
                                         ?>
                                         <div class="form-group">
                                             <div>
-                                                @if(Helper::GeneralWebmasterSettings("ar_box_status") && Helper::GeneralWebmasterSettings("en_box_status"))
-                                                    <small>{!!  trans('backLang.englishBox') !!}</small> @endif
+                                                <small>{!!  trans('backLang.englishBox') !!}</small>
                                                 &nbsp;
                                                 <div class="search-example" dir="ltr">
                                                     <a id="title_in_engines_en" href="{{ $seo_example_url }}"
@@ -2839,6 +2834,205 @@
                                     @endif
                                 </div>
                             </div>
+
+
+                            <div class="row">
+                                <div class="col-sm-6">
+
+                                    @if(Helper::GeneralWebmasterSettings("ru_box_status"))
+                                        <div class="form-group">
+                                            <div>
+                                                <small>{!!  trans('backLang.topicSEOTitle') !!}</small>
+                                                <small>{!!  trans('backLang.russianBox') !!}</small>
+
+                                                {!! Form::text('seo_title_ru',$Topics->seo_title_ru, array('class' => 'form-control','id'=>'seo_title_ru','maxlength'=>'65', 'dir'=>trans('backLang.ltr'))) !!}
+                                            </div>
+                                        </div>
+                                    @endif
+                                    @if(Helper::GeneralWebmasterSettings("ru_box_status"))
+                                        <div class="form-group">
+                                            <div>
+                                                <small>{!!  trans('backLang.friendlyURL') !!}</small>
+                                                <small>{!!  trans('backLang.russianBox') !!}</small>
+
+                                                {!! Form::text('seo_url_slug_ru',$Topics->seo_url_slug_ru, array('class' => 'form-control','id'=>'seo_url_slug_ru', 'dir'=>trans('backLang.ltr'))) !!}
+                                            </div>
+                                        </div>
+                                    @endif
+
+                                    @if(Helper::GeneralWebmasterSettings("ru_box_status"))
+                                        <div class="form-group">
+                                            <div>
+                                                <small>{!!  trans('backLang.topicSEODesc') !!}</small>
+                                                <small>{!!  trans('backLang.russianBox') !!}</small>
+
+                                                {!! Form::textarea('seo_description_ru',$Topics->seo_description_ru, array('class' => 'form-control','id'=>'seo_description_ru','maxlength'=>'165', 'dir'=>trans('backLang.ltr'),'rows'=>'2')) !!}
+                                            </div>
+                                        </div>
+                                    @endif
+                                    @if(Helper::GeneralWebmasterSettings("ru_box_status"))
+                                        <div class="form-group">
+                                            <div>
+                                                <small>{!!  trans('backLang.topicSEOKeywords') !!}</small>
+                                                <small>{!!  trans('backLang.russianBox') !!}</small>
+
+                                                {!! Form::textarea('seo_keywords_ru',$Topics->seo_keywords_ru, array('class' => 'form-control','id'=>'seo_keywords_ru', 'dir'=>trans('backLang.ltr'),'rows'=>'2')) !!}
+                                            </div>
+                                        </div>
+                                    @endif
+
+
+                                    <br>
+                                    <br>
+
+                                </div>
+
+                                <div class="col-sm-6">
+                                    @if(Helper::GeneralWebmasterSettings("ru_box_status"))
+                                        <?php
+                                        $seo_example_title = $Topics->title_ru;
+                                        $seo_example_desc = Helper::GeneralSiteSettings("site_desc_ru");
+                                        if ($Topics->seo_title_ru != "") {
+                                            $seo_example_title = $Topics->seo_title_ru;
+                                        }
+                                        if ($Topics->seo_description_ru != "") {
+                                            $seo_example_desc = $Topics->seo_description_ru;
+                                        }
+                                        if ($Topics->seo_url_slug_ru != "" && Helper::GeneralWebmasterSettings("links_status")) {
+                                            $seo_example_url = url($Topics->seo_url_slug_ru);
+                                        } else {
+                                            $seo_example_url = route('FrontendTopic', ["section" => $Topics->webmasterSection->name, "id" => $Topics->id]);
+                                        }
+                                        ?>
+                                        <div class="form-group">
+                                            <div>
+                                                <small>{!!  trans('backLang.russianBox') !!}</small>
+                                                &nbsp;
+                                                <div class="search-example" dir="ltr">
+                                                    <a id="title_in_engines_ru" href="{{ $seo_example_url }}"
+                                                       target="_blank">{{ $seo_example_title }}</a>
+                                                    <span id="url_in_engines_ru">{{ $seo_example_url }}</span>
+                                                    <div id="desc_in_engines_ru">{{ $seo_example_desc }} ...</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div>
+                                                <i class="material-icons">&#xe8fd;</i>
+                                                <small>{!!  trans('backLang.seoTabSettings') !!}</small>
+                                            </div>
+                                        </div>
+                                        <br>
+                                        <br>
+                                    @endif
+                                </div>
+                            </div>
+
+
+
+
+                            <div class="row">
+                                <div class="col-sm-6">
+
+                                    @if(Helper::GeneralWebmasterSettings("it_box_status"))
+                                        <div class="form-group">
+                                            <div>
+                                                <small>{!!  trans('backLang.topicSEOTitle') !!}</small>
+                                                <small>{!!  trans('backLang.italianBox') !!}</small>
+
+                                                {!! Form::text('seo_title_it',$Topics->seo_title_it, array('class' => 'form-control','id'=>'seo_title_it','maxlength'=>'65', 'dir'=>trans('backLang.ltr'))) !!}
+                                            </div>
+                                        </div>
+                                    @endif
+                                    @if(Helper::GeneralWebmasterSettings("it_box_status"))
+                                        <div class="form-group">
+                                            <div>
+                                                <small>{!!  trans('backLang.friendlyURL') !!}</small>
+                                                <small>{!!  trans('backLang.italianBox') !!}</small>
+
+                                                {!! Form::text('seo_url_slug_it',$Topics->seo_url_slug_it, array('class' => 'form-control','id'=>'seo_url_slug_it', 'dir'=>trans('backLang.ltr'))) !!}
+                                            </div>
+                                        </div>
+                                    @endif
+
+                                    @if(Helper::GeneralWebmasterSettings("it_box_status"))
+                                        <div class="form-group">
+                                            <div>
+                                                <small>{!!  trans('backLang.topicSEODesc') !!}</small>
+                                                <small>{!!  trans('backLang.italianBox') !!}</small>
+
+                                                {!! Form::textarea('seo_description_it',$Topics->seo_description_it, array('class' => 'form-control','id'=>'seo_description_it','maxlength'=>'165', 'dir'=>trans('backLang.ltr'),'rows'=>'2')) !!}
+                                            </div>
+                                        </div>
+                                    @endif
+                                    @if(Helper::GeneralWebmasterSettings("it_box_status"))
+                                        <div class="form-group">
+                                            <div>
+                                                <small>{!!  trans('backLang.topicSEOKeywords') !!}</small>
+                                                <small>{!!  trans('backLang.italianBox') !!}</small>
+
+                                                {!! Form::textarea('seo_keywords_it',$Topics->seo_keywords_it, array('class' => 'form-control','id'=>'seo_keywords_it', 'dir'=>trans('backLang.ltr'),'rows'=>'2')) !!}
+                                            </div>
+                                        </div>
+                                    @endif
+
+
+                                    <div class="form-group">
+                                        <div>
+                                            <button type="submit" class="btn btn-primary m-t"><i class="material-icons">
+                                                    &#xe31b;</i> {!! trans('backLang.update') !!}</button>
+                                            <a href="{{ route('topics',$WebmasterSection->id) }}"
+                                               class="btn btn-default m-t"><i class="material-icons">
+                                                    &#xe5cd;</i> {!! trans('backLang.cancel') !!}</a>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <br>
+
+                                </div>
+
+                                <div class="col-sm-6">
+                                    @if(Helper::GeneralWebmasterSettings("it_box_status"))
+                                        <?php
+                                        $seo_example_title = $Topics->title_it;
+                                        $seo_example_desc = Helper::GeneralSiteSettings("site_desc_it");
+                                        if ($Topics->seo_title_it != "") {
+                                            $seo_example_title = $Topics->seo_title_it;
+                                        }
+                                        if ($Topics->seo_description_it != "") {
+                                            $seo_example_desc = $Topics->seo_description_it;
+                                        }
+                                        if ($Topics->seo_url_slug_it != "" && Helper::GeneralWebmasterSettings("links_status")) {
+                                            $seo_example_url = url($Topics->seo_url_slug_it);
+                                        } else {
+                                            $seo_example_url = route('FrontendTopic', ["section" => $Topics->webmasterSection->name, "id" => $Topics->id]);
+                                        }
+                                        ?>
+                                        <div class="form-group">
+                                            <div>
+                                                <small>{!!  trans('backLang.italianBox') !!}</small>
+                                                &nbsp;
+                                                <div class="search-example" dir="ltr">
+                                                    <a id="title_in_engines_it" href="{{ $seo_example_url }}"
+                                                       target="_blank">{{ $seo_example_title }}</a>
+                                                    <span id="url_in_engines_it">{{ $seo_example_url }}</span>
+                                                    <div id="desc_in_engines_it">{{ $seo_example_desc }} ...</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div>
+                                                <i class="material-icons">&#xe8fd;</i>
+                                                <small>{!!  trans('backLang.seoTabSettings') !!}</small>
+                                            </div>
+                                        </div>
+                                        <br>
+                                        <br>
+                                    @endif
+                                </div>
+                            </div>
+
+
 
 
                             {{Form::close()}}
@@ -3013,7 +3207,7 @@
     <script src="{{ URL::to("backEnd/libs/js/iconpicker/fontawesome-iconpicker.js") }}"></script>
     <script>
         $(function () {
-            $('.icp-auto').iconpicker({placement: '{{ (trans('backLang.direction')=="rtl")?"topLeft":"topRight" }}'});
+            $('.icp-auto').iconpicker({placement: '{{ (trans('backLang.direction')=="rtl")?"topRight":"topRight" }}'});
         });
 
         // Js Slug

@@ -52,7 +52,7 @@ return [
     'newComment' => 'Добави Коментар',
     'refresh' => 'Презареди',
     'getInTouch' => 'Свържете се с нас като попълните формата отдолу:',
-    'homeContents1Title' => 'Последни Новини',
+    'homeContents1Title' => 'Последни Предложения',
     'homeContents1desc' => 'Последни постове от нашия блог.',
     'homeContents2Title' => 'Текущи работи',
     'homeContents2desc' => 'Някой от последните ни проекти.',

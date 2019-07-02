@@ -723,10 +723,16 @@
                                             <select name="lang_code" id="lang_code" class="form-control c-select">
                                                 <option value="all">{{ trans('backLang.customFieldsForAllLang') }}</option>
                                                 @if(Helper::GeneralWebmasterSettings("ar_box_status"))
-                                                    <option value="ar">العربية</option>
+                                                    <option value="ar">Bulgarian</option>
                                                 @endif
                                                 @if(Helper::GeneralWebmasterSettings("en_box_status"))
                                                     <option value="en">English</option>
+                                                @endif
+                                                @if(Helper::GeneralWebmasterSettings("ru_box_status"))
+                                                    <option value="ru">Russian</option>
+                                                @endif
+                                                @if(Helper::GeneralWebmasterSettings("it_box_status"))
+                                                    <option value="it">Italian</option>
                                                 @endif
                                             </select>
                                         </div>
@@ -1016,12 +1022,22 @@
                                                 <option value="all" {{ (Session::get('WebmasterSectionField')->lang_code=="all")?"selected='selected'":"" }}>{{ trans('backLang.customFieldsForAllLang') }}</option>
                                                 @if(Helper::GeneralWebmasterSettings("ar_box_status"))
                                                     <option value="ar" {{ (Session::get('WebmasterSectionField')->lang_code=="ar")?"selected='selected'":"" }}>
-                                                        العربية
+                                                        Bulgarian
                                                     </option>
                                                 @endif
                                                 @if(Helper::GeneralWebmasterSettings("en_box_status"))
                                                     <option value="en" {{ (Session::get('WebmasterSectionField')->lang_code=="en")?"selected='selected'":"" }}>
                                                         English
+                                                    </option>
+                                                @endif
+                                                @if(Helper::GeneralWebmasterSettings("ru_box_status"))
+                                                    <option value="ru" {{ (Session::get('WebmasterSectionField')->lang_code=="ru")?"selected='selected'":"" }}>
+                                                        Russian
+                                                    </option>
+                                                @endif
+                                                @if(Helper::GeneralWebmasterSettings("it_box_status"))
+                                                    <option value="it" {{ (Session::get('WebmasterSectionField')->lang_code=="it")?"selected='selected'":"" }}>
+                                                        Italian
                                                     </option>
                                                 @endif
                                             </select>

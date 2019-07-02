@@ -127,8 +127,8 @@
                         $ttile = "bannerPhoto";
                         $file1 = "file_ar";
                         $file2 = "file_en";
-                        $file2 = "file_ru";
-                        $file2 = "file_it";
+                        $file3 = "file_ru";
+                        $file4 = "file_it";
                         $file_allow = "image/*";
                         ?>
                     @else
@@ -136,8 +136,8 @@
                         $ttile = "topicVideo";
                         $file1 = "file2_ar";
                         $file2 = "file2_en";
-                        $file2 = "file2_ru";
-                        $file2 = "file2_it";
+                        $file3 = "file2_ru";
+                        $file4 = "file2_it";
                         $file_allow = "*'";
                         ?>
                     @endif
@@ -228,7 +228,7 @@
                                                href="{{ URL::to('uploads/banners/'.$Banners->file_ru) }}">{!!  $Banners->file_ru !!}</a>
                                         @endif
                                     @endif
-                                    {!! Form::file($file2, array('class' => 'form-control','id'=>'file_ru','accept'=>$file_allow)) !!}
+                                    {!! Form::file($file3, array('class' => 'form-control','id'=>'file_ru','accept'=>$file_allow)) !!}
                                 </div>
                             </div>
                         @endif
@@ -258,7 +258,7 @@
                                                href="{{ URL::to('uploads/banners/'.$Banners->file_it) }}">{!!  $Banners->file_it !!}</a>
                                         @endif
                                     @endif
-                                    {!! Form::file($file2, array('class' => 'form-control','id'=>'file_it','accept'=>$file_allow)) !!}
+                                    {!! Form::file($file4, array('class' => 'form-control','id'=>'file_it','accept'=>$file_allow)) !!}
                                 </div>
                             </div>
                         @endif
