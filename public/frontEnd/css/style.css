@@ -915,7 +915,7 @@ form#contactform .validation {
 .lang a {
     background: #0dbaa4;
     color: #fff;
-    display: block;
+    display: inline-block;
     padding: 9px 15px;
     height: 40px;
 }

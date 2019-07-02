@@ -2099,7 +2099,7 @@
                                                 <div class="form-group row">
                                                     <label for="title_ar"
                                                            class="col-sm-3 form-control-label">{!!  trans('backLang.topicMapTitle') !!}
-                                                        @if(Helper::GeneralWebmasterSettings("ar_box_status") && Helper::GeneralWebmasterSettings("en_box_status")){!!  trans('backLang.arabicBox') !!}@endif
+                                                        {!!  trans('backLang.arabicBox') !!}
                                                     </label>
                                                     <div class="col-sm-9">
                                                         {!! Form::text('title_ar',Session::get('Map')->title_ar, array('placeholder' => '','class' => 'form-control','id'=>'title_ar', 'dir'=>trans('backLang.rtl'))) !!}
@@ -2110,19 +2110,42 @@
                                                 <div class="form-group row">
                                                     <label for="title_en"
                                                            class="col-sm-3 form-control-label">{!!  trans('backLang.topicMapTitle') !!}
-                                                        @if(Helper::GeneralWebmasterSettings("ar_box_status") && Helper::GeneralWebmasterSettings("en_box_status")){!!  trans('backLang.englishBox') !!}@endif
+                                                        {!!  trans('backLang.englishBox') !!}
                                                     </label>
                                                     <div class="col-sm-9">
                                                         {!! Form::text('title_en',Session::get('Map')->title_en, array('placeholder' => '','class' => 'form-control','id'=>'title_en', 'dir'=>trans('backLang.ltr'))) !!}
                                                     </div>
                                                 </div>
                                             @endif
+                                            @if(Helper::GeneralWebmasterSettings("ru_box_status"))
+                                                <div class="form-group row">
+                                                    <label for="title_ru"
+                                                           class="col-sm-3 form-control-label">{!!  trans('backLang.topicMapTitle') !!}
+                                                        {!!  trans('backLang.russianBox') !!}
+                                                    </label>
+                                                    <div class="col-sm-9">
+                                                        {!! Form::text('title_ru',Session::get('Map')->title_ru, array('placeholder' => '','class' => 'form-control','id'=>'title_ru', 'dir'=>trans('backLang.ltr'))) !!}
+                                                    </div>
+                                                </div>
+                                            @endif
+                                            @if(Helper::GeneralWebmasterSettings("it_box_status"))
+                                                <div class="form-group row">
+                                                    <label for="title_it"
+                                                           class="col-sm-3 form-control-label">{!!  trans('backLang.topicMapTitle') !!}
+                                                        {!!  trans('backLang.italianBox') !!}
+                                                    </label>
+                                                    <div class="col-sm-9">
+                                                        {!! Form::text('title_it',Session::get('Map')->title_it, array('placeholder' => '','class' => 'form-control','id'=>'title_it', 'dir'=>trans('backLang.ltr'))) !!}
+                                                    </div>
+                                                </div>
+                                            @endif
+
 
                                             @if(Helper::GeneralWebmasterSettings("ar_box_status"))
                                                 <div class="form-group row">
                                                     <label for="details_ar"
                                                            class="col-sm-3 form-control-label">{!!  trans('backLang.topicMapDetails') !!}
-                                                        @if(Helper::GeneralWebmasterSettings("ar_box_status") && Helper::GeneralWebmasterSettings("en_box_status")){!!  trans('backLang.arabicBox') !!}@endif
+                                                        {!!  trans('backLang.arabicBox') !!}
                                                     </label>
                                                     <div class="col-sm-9">
                                                         {!! Form::textarea('details_ar',Session::get('Map')->details_ar, array('placeholder' => '','class' => 'form-control','id'=>'details_ar','rows'=>'3', 'dir'=>trans('backLang.rtl'))) !!}
@@ -2133,10 +2156,33 @@
                                                 <div class="form-group row">
                                                     <label for="details_en"
                                                            class="col-sm-3 form-control-label">{!!  trans('backLang.topicMapDetails') !!}
-                                                        @if(Helper::GeneralWebmasterSettings("ar_box_status") && Helper::GeneralWebmasterSettings("en_box_status")){!!  trans('backLang.englishBox') !!}@endif
+                                                        {!!  trans('backLang.englishBox') !!}
                                                     </label>
                                                     <div class="col-sm-9">
                                                         {!! Form::textarea('details_en',Session::get('Map')->details_en, array('placeholder' => '','class' => 'form-control','id'=>'details_en','rows'=>'3', 'dir'=>trans('backLang.ltr'))) !!}
+                                                    </div>
+                                                </div>
+                                            @endif
+
+                                            @if(Helper::GeneralWebmasterSettings("ru_box_status"))
+                                                <div class="form-group row">
+                                                    <label for="details_ru"
+                                                           class="col-sm-3 form-control-label">{!!  trans('backLang.topicMapDetails') !!}
+                                                        {!!  trans('backLang.russianBox') !!}
+                                                    </label>
+                                                    <div class="col-sm-9">
+                                                        {!! Form::textarea('details_ru',Session::get('Map')->details_ru, array('placeholder' => '','class' => 'form-control','id'=>'details_ru','rows'=>'3', 'dir'=>trans('backLang.ltr'))) !!}
+                                                    </div>
+                                                </div>
+                                            @endif
+                                            @if(Helper::GeneralWebmasterSettings("it_box_status"))
+                                                <div class="form-group row">
+                                                    <label for="details_it"
+                                                           class="col-sm-3 form-control-label">{!!  trans('backLang.topicMapDetails') !!}
+                                                        {!!  trans('backLang.italianBox') !!}
+                                                    </label>
+                                                    <div class="col-sm-9">
+                                                        {!! Form::textarea('details_it',Session::get('Map')->details_it, array('placeholder' => '','class' => 'form-control','id'=>'details_it','rows'=>'3', 'dir'=>trans('backLang.ltr'))) !!}
                                                     </div>
                                                 </div>
                                             @endif

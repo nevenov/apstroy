@@ -14,20 +14,19 @@
                                 </a>
                             </span>
                 @endif
-                @if($WebmasterSettings->languages_ar_status  && $WebmasterSettings->languages_en_status )
+                {{--@if($WebmasterSettings->languages_ar_status  && $WebmasterSettings->languages_en_status )--}}
                     <span class="lang">
-                            @if(trans('backLang.code')=="ar")
-                            <a href="{{ URL::to('lang/en') }}"><i
-                                        class="fa fa-language "></i> {{ str_replace("[ ","",str_replace(" ]","",strip_tags(trans('backLang.englishBox')))) }}
-                                </a>
-                        @else
-                            <a href="{{ URL::to('lang/ar') }}"><i
-                                        class="fa fa-language "></i> {{ str_replace("[ ","",str_replace(" ]","",strip_tags(trans('backLang.arabicBox')))) }}
-                                </a>
-                        @endif
+                        {{--@if(trans('backLang.code')=="en")--}}
+                        <a href="{{ URL::to('lang/ar') }}">{{ str_replace("[ ","",str_replace(" ]","",strip_tags(trans('backLang.arabicBox')))) }}</a>
+                        <a href="{{ URL::to('lang/ru') }}">{{ str_replace("[ ","",str_replace(" ]","",strip_tags(trans('backLang.russianBox')))) }}</a>
+                        <a href="{{ URL::to('lang/it') }}">{{ str_replace("[ ","",str_replace(" ]","",strip_tags(trans('backLang.italianBox')))) }}</a>
+                        <a href="{{ URL::to('lang/en') }}">{{ str_replace("[ ","",str_replace(" ]","",strip_tags(trans('backLang.englishBox')))) }}</a>
+                        {{--@else--}}
 
-                        </span>
-                @endif
+                        {{--@endif--}}
+
+                    </span>
+                {{--@endif--}}
 
 
             </div>

@@ -10,7 +10,7 @@ return [
     'right' => 'right',
     'arabicBox' => '<small>[ BG ]</small>',
     'englishBox' => '<small>[ EN ]</small>',
-    'russianBox' => '<small>[ EN ]</small>',
+    'russianBox' => '<small>[ RU ]</small>',
     'italianBox' => '<small>[ IT ]</small>',
     'rtl' => 'ltr',
     'ltr' => 'ltr',

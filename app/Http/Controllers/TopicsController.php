@@ -766,8 +766,8 @@ class TopicsController extends Controller
                 $slugs = Helper::URLSlug($request->seo_url_slug_ar, $request->seo_url_slug_en, "topic", $id);
                 $Topic->seo_url_slug_ar = $slugs['slug_ar'];
                 $Topic->seo_url_slug_en = $slugs['slug_en'];
-                $Topic->seo_url_slug_ru = $slugs['seo_url_slug_ru'];
-                $Topic->seo_url_slug_it = $slugs['seo_url_slug_it'];
+                $Topic->seo_url_slug_ru = $slugs['slug_ru'];
+                $Topic->seo_url_slug_it = $slugs['slug_it'];
 
                 $Topic->save();
                 return redirect()->action('TopicsController@edit', [$webmasterId, $id])->with('doneMessage',
