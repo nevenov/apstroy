@@ -603,10 +603,10 @@
                 <div class="col-lg-3">
                     <div>
                         <div class="topic-info">
-                            <div class="info">
-                                <i class="fa fa-user"></i> <a
-                                        href="{{route('FrontendUserTopics',$Topic->created_by)}}">{{$Topic->user->name}}</a>
-                            </div>
+                            {{--<div class="info">--}}
+                                {{--<i class="fa fa-user"></i> <a--}}
+                                        {{--href="{{route('FrontendUserTopics',$Topic->created_by)}}">{{$Topic->user->name}}</a>--}}
+                            {{--</div>--}}
                             @if($WebmasterSection->date_status)
                                 <div class="info">
                                     <i class="fa fa-calendar"></i> {!! $Topic->date  !!}

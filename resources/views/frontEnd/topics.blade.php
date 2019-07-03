@@ -39,12 +39,17 @@
     <div class="container">
         <div class="listing spacer">
 
+        <?php
+            $countCategories = count($Categories);
+            //$countCategories = 0;
+            ?>
+
 
             <div class="row">
-                @if(count($Categories)>0)
+                @if($countCategories>0)
                     @include('frontEnd.includes.side')
                 @endif
-                <div class="col-lg-{{(count($Categories)>0)? "9":"12"}}">
+                <div class="col-lg-{{($countCategories>0)? "9":"12"}}">
                     @if($Topics->total() == 0)
                         <div class="alert alert-warning">
                             <i class="fa fa-info"></i> &nbsp; {{ trans('frontLang.noData') }}
@@ -86,7 +91,7 @@
                                     }
 
                                     // set row div
-                                    if (($i == 2 && count($Categories) > 0) || ($i == 3 && count($Categories) == 0)) {
+                                    if (($i == 2 && $countCategories > 0) || ($i == 3 && $countCategories == 0)) {
                                         $i = 0;
                                         echo "</div><div class='row'>";
                                     }
@@ -104,7 +109,7 @@
                                         }
                                     }
                                     ?>
-                                    <div class="col-lg-{{(count($Categories)>0)? "6":"4"}}">
+                                    <div class="col-lg-{{($countCategories>0)? "6":"4"}}">
                                         <div class="item">
                                             <div class="image-holder">
                                                 @if($Topic->webmasterSection->type==2 && $Topic->video_file!="")

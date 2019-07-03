@@ -158,9 +158,10 @@ return [
     'langVar' => 'Language Variable',
 
     // Webmaster Sections
-    'sitePages' => 'Site pages',
+    'sitePages' => 'Поморие',
     'photos' => 'Photos',
-    'blog' => 'Blog',
+    'blog' => 'Проектов',
+    'projects' => 'Проектов',
     'services' => 'Services',
     'news' => 'News',
     'videos' => 'Videos',

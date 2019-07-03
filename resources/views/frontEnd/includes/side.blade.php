@@ -84,104 +84,107 @@
 
         @endif
 
-        <div class="widget  hidden-xs">
-            <h5 class="widgetheading">{{ trans('backLang.search') }}</h5>
-            {{Form::open(['route'=>['searchTopics'],'method'=>'POST','class'=>'form-search'])}}
-            <div class="input-group">
-                {!! Form::text('search_word',@$search_word, array('placeholder' => trans('frontLang.search'),'class' => 'form-control','id'=>'search_word','required'=>'')) !!}
-                <span class="input-group-btn">
-                    <button type="submit" class="btn btn-theme"><i class="fa fa-search"></i></button>
-                </span>
-            </div>
+        {{--<div class="widget  hidden-xs">--}}
+            {{--<h5 class="widgetheading">{{ trans('backLang.search') }}</h5>--}}
+            {{--{{Form::open(['route'=>['searchTopics'],'method'=>'POST','class'=>'form-search'])}}--}}
+            {{--<div class="input-group">--}}
+                {{--{!! Form::text('search_word',@$search_word, array('placeholder' => trans('frontLang.search'),'class' => 'form-control','id'=>'search_word','required'=>'')) !!}--}}
+                {{--<span class="input-group-btn">--}}
+                    {{--<button type="submit" class="btn btn-theme"><i class="fa fa-search"></i></button>--}}
+                {{--</span>--}}
+            {{--</div>--}}
 
-            {{Form::close()}}
-        </div>
-        @if(count($TopicsMostViewed)>0)
+            {{--{{Form::close()}}--}}
+        {{--</div>--}}
+
+
+
+        {{--@if(count($TopicsMostViewed)>0)--}}
             <?php
-            $side_title_var = "title_" . trans('backLang.boxCode');
-            $side_title_var2 = "title_" . trans('backLang.boxCodeOther');
-            $slug_var = "seo_url_slug_" . trans('backLang.boxCode');
-            $slug_var2 = "seo_url_slug_" . trans('backLang.boxCodeOther');
+//            $side_title_var = "title_" . trans('backLang.boxCode');
+//            $side_title_var2 = "title_" . trans('backLang.boxCodeOther');
+//            $slug_var = "seo_url_slug_" . trans('backLang.boxCode');
+//            $slug_var2 = "seo_url_slug_" . trans('backLang.boxCodeOther');
             ?>
-            <div class="hot-properties hidden-xs">
-                <h4>{{ trans('frontLang.mostViewed') }}</h4>
+            {{--<div class="hot-properties hidden-xs">--}}
+                {{--<h4>{{ trans('frontLang.mostViewed') }}</h4>--}}
 
-                @foreach($TopicsMostViewed as $TopicMostViewed)
+                {{--@foreach($TopicsMostViewed as $TopicMostViewed)--}}
                     <?php
-                    if ($TopicMostViewed->$side_title_var != "") {
-                        $side_title = $TopicMostViewed->$side_title_var;
-                    } else {
-                        $side_title = $TopicMostViewed->$side_title_var2;
-                    }
-                    if ($TopicMostViewed->$slug_var != "" && Helper::GeneralWebmasterSettings("links_status")) {
-                        if (trans('backLang.code') != env('DEFAULT_LANGUAGE')) {
-                            $topic_link_url = url(trans('backLang.code') . "/" . $TopicMostViewed->$slug_var);
-                        } else {
-                            $topic_link_url = url($TopicMostViewed->$slug_var);
-                        }
-                    } else {
-                        if (trans('backLang.code') != env('DEFAULT_LANGUAGE')) {
-                            $topic_link_url = route('FrontendTopicByLang', ["lang" => trans('backLang.code'), "section" => $TopicMostViewed->webmasterSection->name, "id" => $TopicMostViewed->id]);
-                        } else {
-                            $topic_link_url = route('FrontendTopic', ["section" => $TopicMostViewed->webmasterSection->name, "id" => $TopicMostViewed->id]);
-                        }
-                    }
+//                    if ($TopicMostViewed->$side_title_var != "") {
+//                        $side_title = $TopicMostViewed->$side_title_var;
+//                    } else {
+//                        $side_title = $TopicMostViewed->$side_title_var2;
+//                    }
+//                    if ($TopicMostViewed->$slug_var != "" && Helper::GeneralWebmasterSettings("links_status")) {
+//                        if (trans('backLang.code') != env('DEFAULT_LANGUAGE')) {
+//                            $topic_link_url = url(trans('backLang.code') . "/" . $TopicMostViewed->$slug_var);
+//                        } else {
+//                            $topic_link_url = url($TopicMostViewed->$slug_var);
+//                        }
+//                    } else {
+//                        if (trans('backLang.code') != env('DEFAULT_LANGUAGE')) {
+//                            $topic_link_url = route('FrontendTopicByLang', ["lang" => trans('backLang.code'), "section" => $TopicMostViewed->webmasterSection->name, "id" => $TopicMostViewed->id]);
+//                        } else {
+//                            $topic_link_url = route('FrontendTopic', ["section" => $TopicMostViewed->webmasterSection->name, "id" => $TopicMostViewed->id]);
+//                        }
+//                    }
                     ?>
-                    <div class="row">
+                    {{--<div class="row">--}}
                         <?php
-                        $detal_w1 = 12;
-                        $detal_w2 = 12;
+//                        $detal_w1 = 12;
+//                        $detal_w2 = 12;
                         ?>
-                        @if($TopicMostViewed->photo_file !="")
+                        {{--@if($TopicMostViewed->photo_file !="")--}}
                             <?php
-                            $detal_w1 = 8;
-                            $detal_w2 = 7;
+//                            $detal_w1 = 8;
+//                            $detal_w2 = 7;
                             ?>
-                            <div class="col-lg-4 col-sm-5">
-                                <a href="{{ $topic_link_url }}">
-                                    <img src="{{ URL::to('uploads/topics/'.$TopicMostViewed->photo_file) }}"
-                                         class="img-responsive img-circle" alt="{{ $side_title }}"/>
-                                </a>
-                            </div>
-                        @elseif($TopicMostViewed->webmasterSection->type==2 && $TopicMostViewed->video_file!="")
+                            {{--<div class="col-lg-4 col-sm-5">--}}
+                                {{--<a href="{{ $topic_link_url }}">--}}
+                                    {{--<img src="{{ URL::to('uploads/topics/'.$TopicMostViewed->photo_file) }}"--}}
+                                         {{--class="img-responsive img-circle" alt="{{ $side_title }}"/>--}}
+                                {{--</a>--}}
+                            {{--</div>--}}
+                        {{--@elseif($TopicMostViewed->webmasterSection->type==2 && $TopicMostViewed->video_file!="")--}}
                             <?php
-                            $detal_w1 = 8;
-                            $detal_w2 = 7;
+//                            $detal_w1 = 8;
+//                            $detal_w2 = 7;
                             ?>
-                            <div class="col-lg-4 col-sm-5">
-                                <a href="{{ $topic_link_url }}">
-                                    @if($TopicMostViewed->video_type ==1)
+                            {{--<div class="col-lg-4 col-sm-5">--}}
+                                {{--<a href="{{ $topic_link_url }}">--}}
+                                    {{--@if($TopicMostViewed->video_type ==1)--}}
                                         <?php
-                                        $Youtube_id = Helper::Get_youtube_video_id($TopicMostViewed->video_file);
+//                                        $Youtube_id = Helper::Get_youtube_video_id($TopicMostViewed->video_file);
                                         ?>
-                                        @if($Youtube_id !="")
-                                            <img src="http://img.youtube.com/vi/{{$Youtube_id}}/0.jpg"
-                                                 class="img-responsive img-circle" alt="{{ $side_title }}"/>
-                                        @endif
-                                    @elseif($TopicMostViewed->video_type ==2)
+                                        {{--@if($Youtube_id !="")--}}
+                                            {{--<img src="http://img.youtube.com/vi/{{$Youtube_id}}/0.jpg"--}}
+                                                 {{--class="img-responsive img-circle" alt="{{ $side_title }}"/>--}}
+                                        {{--@endif--}}
+                                    {{--@elseif($TopicMostViewed->video_type ==2)--}}
                                         <?php
-                                        $Vimeo_id = Helper::Get_vimeo_video_id($TopicMostViewed->video_file);
+//                                        $Vimeo_id = Helper::Get_vimeo_video_id($TopicMostViewed->video_file);
                                         ?>
-                                        @if($Vimeo_id !="")
+                                        {{--@if($Vimeo_id !="")--}}
                                             <?php
-                                            $hash = unserialize(file_get_contents("http://vimeo.com/api/v2/video/$Vimeo_id.php"));
+//                                            $hash = unserialize(file_get_contents("http://vimeo.com/api/v2/video/$Vimeo_id.php"));
                                             ?>
 
-                                            <img src="{{ $hash[0]['thumbnail_large'] }}"
-                                                 class="img-responsive img-circle" alt="{{ $side_title }}"/>
-                                        @endif
-                                    @endif
-                                </a>
-                            </div>
-                        @endif
+                                            {{--<img src="{{ $hash[0]['thumbnail_large'] }}"--}}
+                                                 {{--class="img-responsive img-circle" alt="{{ $side_title }}"/>--}}
+                                        {{--@endif--}}
+                                    {{--@endif--}}
+                                {{--</a>--}}
+                            {{--</div>--}}
+                        {{--@endif--}}
 
-                        <div class="col-lg-{{ $detal_w1 }} col-sm-{{ $detal_w2 }}">
-                            <h5><a href="{{ $topic_link_url }}">{{ $side_title }}</a></h5>
-                        </div>
-                    </div>
-                @endforeach
-            </div>
-        @endif
+                        {{--<div class="col-lg-{{ $detal_w1 }} col-sm-{{ $detal_w2 }}">--}}
+                            {{--<h5><a href="{{ $topic_link_url }}">{{ $side_title }}</a></h5>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
+                {{--@endforeach--}}
+            {{--</div>--}}
+        {{--@endif--}}
 
             <?php
             // View side banners

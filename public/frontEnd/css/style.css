@@ -1165,7 +1165,7 @@ footer .widget .widgetheading:before {
     color: #303e4c;
     display: block;
     width: 100%;
-    padding: 10px 15px;
+    padding: 10px 8px;
 }
 
 .list-group li a:hover, .list-group li a:active, .list-group li a:focus, .list-group li .active {
