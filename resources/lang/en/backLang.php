@@ -465,7 +465,7 @@ return [
     'signIn' => 'Sign in',
     'keepMeSignedIn' => 'Keep me signed in',
     'signedInToControl' => 'Sign in to CONTROL',
-    'control' => 'SmartEnd',
+    'control' => 'Menu',
     'resetPassword' => 'Reset Password',
     'confirmPassword' => 'Confirm Password',
     'newPassword' => 'New Password',
