@@ -158,7 +158,7 @@ return [
     'langVar' => 'Language Variable',
 
     // Webmaster Sections
-    'sitePages' => 'Pomorie',
+    'sitePages' => 'A proposito di Pomorie',
     'photos' => 'Photos',
     'blog' => 'Progetti',
     'projects' => 'Progetti',
