@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ trans('backLang.code') }}" dir="{{ trans('backLang.direction') }}">
+<html lang="{!! str_replace('ar', 'bg', trans('backLang.code')) !!}" dir="ltr">
 <head>
     @include('backEnd.includes.head')
     @yield('headerInclude')

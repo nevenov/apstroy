@@ -2,12 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bf8fbf3f-963f-43eb-bf6f-bc8b0c5fdd96" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/public/backEnd/assets/images/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/backEnd/assets/styles/font.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/backEnd/assets/styles/font.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/frontEnd/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/frontEnd/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/topics/14889008137532.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/topics/14889008434898.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/topics/15127609093634.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/topics/15614675826219.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/topics/15614676767264.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/topics/15614677384849.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/lang/ar/backLang.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/ar/backLang.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/en/backLang.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/en/backLang.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/it/backLang.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/it/backLang.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/ru/backLang.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/ru/backLang.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backEnd/includes/menu.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backEnd/includes/menu.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backEnd/layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backEnd/layout.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontEnd/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontEnd/home.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontEnd/topic.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontEnd/topic.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontEnd/topics.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontEnd/topics.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -20,27 +29,92 @@
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="home.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/frontEnd/home.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="4114">
+              <caret line="242" column="46" selection-start-line="242" selection-start-column="46" selection-end-line="242" selection-end-column="46" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FrontendHomeController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/FrontendHomeController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="612">
+              <caret line="36" selection-start-line="36" selection-end-line="36" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="topics.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/frontEnd/topics.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3519">
+              <caret line="207" column="58" selection-start-line="196" selection-start-column="52" selection-end-line="207" selection-end-column="58" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="topic.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/frontEnd/topic.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="7803">
+              <caret line="459" column="54" selection-start-line="459" selection-start-column="40" selection-end-line="459" selection-end-column="54" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/frontEnd/css/style.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="262" column="15" selection-start-line="262" selection-start-column="15" selection-end-line="262" selection-end-column="15" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="backLang.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/lang/ar/backLang.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="117" column="8" selection-start-line="117" selection-start-column="5" selection-end-line="117" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="layout.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/backEnd/layout.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="1" column="6" lean-forward="true" selection-start-line="1" selection-start-column="6" selection-end-line="1" selection-end-column="78" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="layout.blade.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/views/frontEnd/layout.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="1" column="78" selection-start-line="1" selection-start-column="78" selection-end-line="1" selection-end-column="78" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/app.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1394">
+              <caret line="82" column="19" selection-start-line="82" selection-start-column="19" selection-end-line="82" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>details_ru</find>
-      <find>seo_keywords_en</find>
-      <find>_en</find>
-      <find>rtl</find>
-      <find>italianBox</find>
-      <find>_ru</find>
-      <find>home_contents_per_page</find>
-      <find>customField_</find>
-      <find>$cf_title_var2</find>
-      <find>$cf_title</find>
-      <find>field_value</find>
-      <find>lang_code</find>
-      <find>form-search</find>
-      <find>side</find>
-      <find>count($Categories)&gt;0</find>
-      <find>$Categories</find>
-      <find>arabic</find>
       <find>count($Categories)</find>
       <find>pull-right menu</find>
       <find>seo_url_slug</find>
@@ -54,6 +128,23 @@
       <find>control</find>
       <find>New</find>
       <find>Visitors</find>
+      <find>fa fa-eye</find>
+      <find>HomeTop</find>
+      <find>Home</find>
+      <find>$HomeTopics</find>
+      <find>HomeTopics</find>
+      <find>status comments</find>
+      <find>$WebmasterSettings</find>
+      <find>status visits</find>
+      <find>carousel-inner</find>
+      <find>bottom-article</find>
+      <find>.listing div.item .image-holder</find>
+      <find>website</find>
+      <find>изтр</find>
+      <find>Options</find>
+      <find>Title</find>
+      <find>Photos</find>
+      <find>SEO</find>
     </findStrings>
     <replaceStrings>
       <replace>_it</replace>
@@ -66,11 +157,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/database/migrations/2019_02_15_113510_create_menus_table.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2019_02_15_113545_create_banners_table.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2019_02_15_113514_create_maps_table.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2019_02_15_113550_create_attach_files_table.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2019_02_15_113526_create_countries_table.php" />
         <option value="$PROJECT_DIR$/database/seeds/MenusSeeder.php" />
         <option value="$PROJECT_DIR$/database/seeds/TopicsSeeder.php" />
         <option value="$PROJECT_DIR$/database/seeds/SettingsSeeder.php" />
@@ -95,7 +181,6 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/WebmasterSectionsController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/WebmasterBannersController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/FrontendHomeController.php" />
         <option value="$PROJECT_DIR$/resources/views/frontEnd/includes/header.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/TopicsController.php" />
         <option value="$PROJECT_DIR$/resources/views/backEnd/banners/edit.blade.php" />
@@ -105,18 +190,24 @@
         <option value="$PROJECT_DIR$/resources/lang/ar/pagination.php" />
         <option value="$PROJECT_DIR$/resources/views/backEnd/topics/edit.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/backEnd/webmaster/sections/edit.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/frontEnd/topics.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/frontEnd/includes/side.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/frontEnd/includes/menu2.blade.php" />
         <option value="$PROJECT_DIR$/resources/lang/ru/frontLang.php" />
-        <option value="$PROJECT_DIR$/public/frontEnd/css/style.css" />
-        <option value="$PROJECT_DIR$/resources/views/frontEnd/topic.blade.php" />
         <option value="$PROJECT_DIR$/resources/lang/it/frontLang.php" />
         <option value="$PROJECT_DIR$/resources/views/backEnd/includes/menu.blade.php" />
         <option value="$PROJECT_DIR$/resources/lang/en/backLang.php" />
         <option value="$PROJECT_DIR$/resources/lang/it/backLang.php" />
         <option value="$PROJECT_DIR$/resources/lang/ru/backLang.php" />
+        <option value="$PROJECT_DIR$/resources/views/frontEnd/home.blade.php" />
+        <option value="$PROJECT_DIR$/config/app.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/FrontendHomeController.php" />
+        <option value="$PROJECT_DIR$/resources/views/frontEnd/topics.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/frontEnd/topic.blade.php" />
+        <option value="$PROJECT_DIR$/public/frontEnd/css/style.css" />
+        <option value="$PROJECT_DIR$/public/backEnd/assets/styles/font.css" />
         <option value="$PROJECT_DIR$/resources/lang/ar/backLang.php" />
+        <option value="$PROJECT_DIR$/resources/views/backEnd/layout.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/frontEnd/layout.blade.php" />
       </list>
     </option>
   </component>
@@ -243,7 +334,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -251,10 +341,29 @@
               <item name="smartend" type="b2602c69:ProjectViewProjectNode" />
               <item name="smartend" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="smartend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="smartend" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="smartend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="smartend" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="smartend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="smartend" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="frontEnd" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -291,23 +400,26 @@
       <workItem from="1561967944871" duration="21806000" />
       <workItem from="1562069754498" duration="10251000" />
       <workItem from="1562141999877" duration="10122000" />
+      <workItem from="1562238887897" duration="8288000" />
+      <workItem from="1562313484722" duration="2111000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="61357000" />
+    <option name="totallyTimeSpent" value="71756000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info id="npm" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.32901135" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19818456" />
+      <window_info id="npm" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32901135" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.204236" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -329,25 +441,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/database/seeds/WebmasterBannersSeeder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-519" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/seeds/WebmasterSectionsSeeder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="15" column="23" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/seeds/WebmasterSettingsSeeder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="20" column="21" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/SettingsController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -410,13 +503,6 @@
         <state relative-caret-position="-9" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/frontEnd/home.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="40" lean-forward="true" selection-start-line="5" selection-start-column="40" selection-end-line="5" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ContactsController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-27" />
@@ -426,20 +512,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="171" column="82" selection-start-line="171" selection-start-column="79" selection-end-line="171" selection-end-column="82" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/FrontendHomeController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="28" column="87" selection-start-line="28" selection-start-column="84" selection-end-line="28" selection-end-column="87" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HomeController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="350" column="43" selection-start-line="350" selection-start-column="40" selection-end-line="350" selection-end-column="43" />
         </state>
       </provider>
     </entry>
@@ -550,21 +622,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/frontEnd/topics.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="43" column="14" selection-start-line="43" selection-start-column="14" selection-end-line="43" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/frontEnd/includes/side.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="331">
           <caret line="187" lean-forward="true" selection-start-line="187" selection-end-line="187" />
-          <folding>
-            <element signature="e#5838#5907#0#PHP" expanded="true" />
-            <element signature="e#6366#6434#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -575,24 +636,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/frontEnd/layout.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-193">
-          <caret line="25" column="1" lean-forward="true" selection-start-line="25" selection-start-column="1" selection-end-line="25" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/frontEnd/includes/header.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-560">
           <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/frontEnd/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="248">
-          <caret line="1167" column="19" selection-start-line="1167" selection-start-column="19" selection-end-line="1167" selection-end-column="19" />
         </state>
       </provider>
     </entry>
@@ -607,18 +654,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="612">
           <caret line="54" column="23" selection-start-line="54" selection-start-column="5" selection-end-line="54" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/frontEnd/topic.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="608" column="42" lean-forward="true" selection-start-line="608" selection-start-column="42" selection-end-line="608" selection-end-column="42" />
-          <folding>
-            <element signature="e#29#35#1" expanded="true" />
-            <element signature="e#29#35#1" expanded="true" />
-            <element signature="e#29#35#1" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -650,13 +685,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/lang/ar/backLang.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="32" column="13" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/backEnd/includes/menu.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -664,8 +692,89 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HomeController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="16" column="10" selection-start-line="16" selection-start-column="6" selection-end-line="16" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/frontEnd/home.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4114">
+          <caret line="242" column="46" selection-start-line="242" selection-start-column="46" selection-end-line="242" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="21" column="39" lean-forward="true" selection-start-line="21" selection-start-column="39" selection-end-line="21" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/app.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1394">
+          <caret line="82" column="19" selection-start-line="82" selection-start-column="19" selection-end-line="82" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/FrontendHomeController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="612">
+          <caret line="36" selection-start-line="36" selection-end-line="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/frontEnd/topics.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3519">
+          <caret line="207" column="58" selection-start-line="196" selection-start-column="52" selection-end-line="207" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/frontEnd/topic.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7803">
+          <caret line="459" column="54" selection-start-line="459" selection-start-column="40" selection-end-line="459" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/lang/ar/backLang.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="117" column="8" selection-start-line="117" selection-start-column="5" selection-end-line="117" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/backEnd/assets/styles/font.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="1" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/frontEnd/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="262" column="15" selection-start-line="262" selection-start-column="15" selection-end-line="262" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/backEnd/layout.blade.php">
-      <provider selected="true" editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="6" lean-forward="true" selection-start-line="1" selection-start-column="6" selection-end-line="1" selection-end-column="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/frontEnd/layout.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="78" selection-start-line="1" selection-start-column="78" selection-end-line="1" selection-end-column="78" />
+        </state>
+      </provider>
     </entry>
   </component>
 </project>

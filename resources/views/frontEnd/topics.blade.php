@@ -194,18 +194,18 @@
                                                 @endif
 
 
-                                                <div class="status visits"><i
-                                                            class="fa fa-eye"></i> {{ trans('frontLang.visits') }}
-                                                    : {!! $Topic->visits !!}</div>
-                                                @if($Topic->webmasterSection->comments_status)
-                                                    <div class="status comments"><i
-                                                                class="fa fa-comments"></i> {{ trans('frontLang.comments') }}
-                                                        : {{count($Topic->approvedComments)}}</div>
-                                                @else
-                                                    <div class="status comments"><i
-                                                                class="fa fa-user"></i> {{$Topic->user->name}}
-                                                    </div>
-                                                @endif
+                                                {{--<div class="status visits"><i--}}
+                                                            {{--class="fa fa-eye"></i> {{ trans('frontLang.visits') }}--}}
+                                                    {{--: {!! $Topic->visits !!}</div>--}}
+                                                {{--@if($Topic->webmasterSection->comments_status)--}}
+                                                    {{--<div class="status comments"><i--}}
+                                                                {{--class="fa fa-comments"></i> {{ trans('frontLang.comments') }}--}}
+                                                        {{--: {{count($Topic->approvedComments)}}</div>--}}
+                                                {{--@else--}}
+                                                    {{--<div class="status comments"><i--}}
+                                                                {{--class="fa fa-user"></i> {{$Topic->user->name}}--}}
+                                                    {{--</div>--}}
+                                                {{--@endif--}}
 
                                             </div>
                                             <h4>

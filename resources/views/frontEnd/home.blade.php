@@ -8,96 +8,96 @@
 
 
 
-    <div class="banner-search">
-        <div class="container">
-            <!-- banner -->
-            <div class="searchbar">
-                <div class="row">
-                    <div class="col-lg-{{(count($TextBanners) ==2)? "4":"3"}}">
-                        {{Form::open(['route'=>['searchTopics'],'method'=>'POST','class'=>'form-search'])}}
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <h3><i class="fa fa-search"></i> {{ trans('backLang.search') }}</h3>
-                            </div>
-                            <div class="col-lg-12 col-sm-12 ">
-                                {{Form::open(['route'=>['searchTopics'],'method'=>'POST','class'=>'form-search'])}}
-                                <div class="input-group">
-                                    {!! Form::text('search_word',@$search_word, array('placeholder' => trans('frontLang.search'),'class' => 'form-control','id'=>'search_word','required'=>'')) !!}
-                                    <span class="input-group-btn">
-                    <button type="submit" class="btn btn-theme"><i
-                                class="fa fa-search"></i> {{ trans('backLang.search') }}</button>
-                </span>
-                                </div>
-                            </div>
-                        </div>
-                        {{Form::close()}}
+    {{--<div class="banner-search">--}}
+        {{--<div class="container">--}}
+            {{--<!-- banner -->--}}
+            {{--<div class="searchbar">--}}
+                {{--<div class="row">--}}
+                    {{--<div class="col-lg-{{(count($TextBanners) ==2)? "4":"3"}}">--}}
+                        {{--{{Form::open(['route'=>['searchTopics'],'method'=>'POST','class'=>'form-search'])}}--}}
+                        {{--<div class="row">--}}
+                            {{--<div class="col-lg-12">--}}
+                                {{--<h3><i class="fa fa-search"></i> {{ trans('backLang.search') }}</h3>--}}
+                            {{--</div>--}}
+                            {{--<div class="col-lg-12 col-sm-12 ">--}}
+                                {{--{{Form::open(['route'=>['searchTopics'],'method'=>'POST','class'=>'form-search'])}}--}}
+                                {{--<div class="input-group">--}}
+                                    {{--{!! Form::text('search_word',@$search_word, array('placeholder' => trans('frontLang.search'),'class' => 'form-control','id'=>'search_word','required'=>'')) !!}--}}
+                                    {{--<span class="input-group-btn">--}}
+                    {{--<button type="submit" class="btn btn-theme"><i--}}
+                                {{--class="fa fa-search"></i> {{ trans('backLang.search') }}</button>--}}
+                {{--</span>--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                        {{--{{Form::close()}}--}}
 
-                    </div>
-                        @if(count($TextBanners)>0)
-                            @foreach($TextBanners->slice(0,1) as $TextBanner)
+                    {{--</div>--}}
+                        {{--@if(count($TextBanners)>0)--}}
+                            {{--@foreach($TextBanners->slice(0,1) as $TextBanner)--}}
                                 <?php
-                                try {
-                                    $TextBanner_type = $TextBanner->webmasterBanner->type;
-                                } catch (Exception $e) {
-                                    $TextBanner_type = 0;
-                                }
+//                                try {
+//                                    $TextBanner_type = $TextBanner->webmasterBanner->type;
+//                                } catch (Exception $e) {
+//                                    $TextBanner_type = 0;
+//                                }
                                 ?>
-                            @endforeach
+                            {{--@endforeach--}}
                             <?php
-                            $title_var = "title_" . trans('backLang.boxCode');
-                            $details_var = "details_" . trans('backLang.boxCode');
-                            $file_var = "file_" . trans('backLang.boxCode');
-
-                            $col_width = 12;
-                            if (count($TextBanners) == 2) {
-                                $col_width = 4;
-                            }
-                            if (count($TextBanners) == 3) {
-                                $col_width = 3;
-                            }
-                            if (count($TextBanners) > 3) {
-                                $col_width = 3;
-                            }
+//                            $title_var = "title_" . trans('backLang.boxCode');
+//                            $details_var = "details_" . trans('backLang.boxCode');
+//                            $file_var = "file_" . trans('backLang.boxCode');
+//
+//                            $col_width = 12;
+//                            if (count($TextBanners) == 2) {
+//                                $col_width = 4;
+//                            }
+//                            if (count($TextBanners) == 3) {
+//                                $col_width = 3;
+//                            }
+//                            if (count($TextBanners) > 3) {
+//                                $col_width = 3;
+//                            }
                             ?>
-                                    @foreach($TextBanners as $TextBanner)
-                                        <div class="col-lg-{{$col_width}}">
-                                            <div class="box">
-                                                <div class="aligncenter">
-                                                    @if($TextBanner->code !="")
-                                                        {!! $TextBanner->code !!}
-                                                    @else
-                                                        @if($TextBanner->$file_var !="")
-                                                            <img src="{{ URL::to('uploads/banners/'.$TextBanner->$file_var) }}"
-                                                                 alt="{{ $TextBanner->$title_var }}"/>
-                                                        @endif
-                                                        <h3>
-                                                            @if($TextBanner->icon !="")
-                                                                <i class="fa {{$TextBanner->icon}}"></i>
-                                                            @endif
-                                                            {!! $TextBanner->$title_var !!}</h3>
-                                                        <p>
-                                                            @if($TextBanner->$details_var !="")
-                                                                {!! nl2br($TextBanner->$details_var) !!}
-                                                            @endif
+                                    {{--@foreach($TextBanners as $TextBanner)--}}
+                                        {{--<div class="col-lg-{{$col_width}}">--}}
+                                            {{--<div class="box">--}}
+                                                {{--<div class="aligncenter">--}}
+                                                    {{--@if($TextBanner->code !="")--}}
+                                                        {{--{!! $TextBanner->code !!}--}}
+                                                    {{--@else--}}
+                                                        {{--@if($TextBanner->$file_var !="")--}}
+                                                            {{--<img src="{{ URL::to('uploads/banners/'.$TextBanner->$file_var) }}"--}}
+                                                                 {{--alt="{{ $TextBanner->$title_var }}"/>--}}
+                                                        {{--@endif--}}
+                                                        {{--<h3>--}}
+                                                            {{--@if($TextBanner->icon !="")--}}
+                                                                {{--<i class="fa {{$TextBanner->icon}}"></i>--}}
+                                                            {{--@endif--}}
+                                                            {{--{!! $TextBanner->$title_var !!}</h3>--}}
+                                                        {{--<p>--}}
+                                                            {{--@if($TextBanner->$details_var !="")--}}
+                                                                {{--{!! nl2br($TextBanner->$details_var) !!}--}}
+                                                            {{--@endif--}}
 
-                                                            @if($TextBanner->link_url !="")
-                                                                <br><a href="{!! $TextBanner->link_url !!}">{{ trans('frontLang.moreDetails') }}</a>
-                                                            @endif
-                                                        </p>
-                                                    @endif
+                                                            {{--@if($TextBanner->link_url !="")--}}
+                                                                {{--<br><a href="{!! $TextBanner->link_url !!}">{{ trans('frontLang.moreDetails') }}</a>--}}
+                                                            {{--@endif--}}
+                                                        {{--</p>--}}
+                                                    {{--@endif--}}
 
-                                                </div>
+                                                {{--</div>--}}
 
-                                            </div>
-                                        </div>
-                                    @endforeach
+                                            {{--</div>--}}
+                                        {{--</div>--}}
+                                    {{--@endforeach--}}
 
-                        @endif
+                        {{--@endif--}}
 
-                </div>
-            </div>
-        </div>
-    </div>
+                {{--</div>--}}
+            {{--</div>--}}
+        {{--</div>--}}
+    {{--</div>--}}
     <!-- banner -->
     <div class="container">
         @if(count($HomeTopics)>0)
@@ -230,17 +230,17 @@
                                         @endif
                                     @endif
                                 </a>
-                                <div class="status visits"><i
-                                            class="fa fa-eye"></i> {{ trans('frontLang.visits') }}
-                                    : {!! $HomeTopic->visits !!}</div>
-                                @if($HomeTopic->webmasterSection->comments_status)
-                                    <div class="status comments"><i
-                                                class="fa fa-comments"></i> {{ trans('frontLang.comments') }}
-                                        : {{count($HomeTopic->approvedComments)}}</div>
-                                @else
-                                    <div class="status comments"><i
-                                                class="fa fa-user"></i> {{$HomeTopic->user->name}} </div>
-                                @endif
+                                {{--<div class="status visits"><i--}}
+                                            {{--class="fa fa-eye"></i> {{ trans('frontLang.visits') }}--}}
+                                    {{--: {!! $HomeTopic->visits !!}</div>--}}
+                                {{--@if($HomeTopic->webmasterSection->comments_status)--}}
+                                    {{--<div class="status comments"><i--}}
+                                                {{--class="fa fa-comments"></i> {{ trans('frontLang.comments') }}--}}
+                                        {{--: {{count($HomeTopic->approvedComments)}}</div>--}}
+                                {{--@else--}}
+                                    {{--<div class="status comments"><i--}}
+                                                {{--class="fa fa-user"></i> {{$HomeTopic->user->name}} </div>--}}
+                                {{--@endif--}}
 
                             </div>
                             <h4>
@@ -303,10 +303,10 @@
                                                     @elseif($customField->type ==6)
                                                         {{--Select--}}
                                                         <div class="row field-row">
-                                                            <div class="col-lg-4">
+                                                            <div class="col-lg-6">
                                                                 {!!  $cf_title !!} :
                                                             </div>
-                                                            <div class="col-lg-8">
+                                                            <div class="col-lg-6">
                                                                 <?php
                                                                 $cf_details_var = "details_" . trans('backLang.boxCode');
                                                                 $cf_details_var2 = "details_en" . trans('backLang.boxCodeOther');
@@ -331,40 +331,40 @@
                                                     @elseif($customField->type ==5)
                                                         {{--Date & Time--}}
                                                         <div class="row field-row">
-                                                            <div class="col-lg-4">
+                                                            <div class="col-lg-6">
                                                                 {!!  $cf_title !!} :
                                                             </div>
-                                                            <div class="col-lg-8">
+                                                            <div class="col-lg-6">
                                                                 {!! date('Y-m-d H:i:s', strtotime($cf_saved_val)) !!}
                                                             </div>
                                                         </div>
                                                     @elseif($customField->type ==4)
                                                         {{--Date--}}
                                                         <div class="row field-row">
-                                                            <div class="col-lg-4">
+                                                            <div class="col-lg-6">
                                                                 {!!  $cf_title !!} :
                                                             </div>
-                                                            <div class="col-lg-8">
+                                                            <div class="col-lg-6">
                                                                 {!! date('Y-m-d', strtotime($cf_saved_val)) !!}
                                                             </div>
                                                         </div>
                                                     @elseif($customField->type ==3)
                                                         {{--Email Address--}}
                                                         <div class="row field-row">
-                                                            <div class="col-lg-4">
+                                                            <div class="col-lg-6">
                                                                 {!!  $cf_title !!} :
                                                             </div>
-                                                            <div class="col-lg-8">
+                                                            <div class="col-lg-6">
                                                                 {!! $cf_saved_val !!}
                                                             </div>
                                                         </div>
                                                     @elseif($customField->type ==2)
                                                         {{--Number--}}
                                                         <div class="row field-row">
-                                                            <div class="col-lg-4">
+                                                            <div class="col-lg-6">
                                                                 {!!  $cf_title !!} :
                                                             </div>
-                                                            <div class="col-lg-8">
+                                                            <div class="col-lg-6">
                                                                 {!! $cf_saved_val !!}
                                                             </div>
                                                         </div>
@@ -373,10 +373,10 @@
                                                     @else
                                                         {{--Text Box--}}
                                                         <div class="row field-row">
-                                                            <div class="col-lg-4">
+                                                            <div class="col-lg-6">
                                                                 {!!  $cf_title !!} :
                                                             </div>
-                                                            <div class="col-lg-8">
+                                                            <div class="col-lg-6">
                                                                 {!! $cf_saved_val !!}
                                                             </div>
                                                         </div>
@@ -391,7 +391,7 @@
 
                             @if(strip_tags($HomeTopic->$details) !="")
                                 <p>
-                                    {{ str_limit(strip_tags($HomeTopic->$details), $limit = 100, $end = '...') }}
+                                    {!! str_limit(strip_tags($HomeTopic->$details), $limit = 100, $end = '...') !!}
                                 </p>
                             @endif
                             <a href="{{ $topic_link_url }}"

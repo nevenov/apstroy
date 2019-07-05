@@ -212,6 +212,8 @@
                             </div>
                         @endif
 
+                        <br>
+
 
                         {{--Additional Feilds--}}
                         @if(count($Topic->webmasterSection->customFields) >0)
