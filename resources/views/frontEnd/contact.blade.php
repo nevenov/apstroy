@@ -236,7 +236,7 @@
         $map_details_var = "details_" . trans('backLang.boxCode');
         ?>
         <script type="text/javascript"
-                src="http://maps.google.com/maps/api/js?key=AIzaSyAgzruFTTvea0LEmw_jAqknqskKDuJK7dM"></script>
+                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAgzruFTTvea0LEmw_jAqknqskKDuJK7dM"></script>
 
         <script type="text/javascript">
             // var iconURLPrefix = 'http://maps.google.com/mapfiles/ms/icons/';

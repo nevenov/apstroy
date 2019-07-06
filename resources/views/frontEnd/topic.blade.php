@@ -57,12 +57,12 @@
     <div class="container">
         <div class="spacer">
             <div class="row">
-                @if(count($Categories) >0)
+                {{--@if(count($Categories) >0)--}}
                     @include('frontEnd.includes.side')
-                @endif
+                {{--@endif--}}
 
                 @if($WebmasterSection->name!="sitePages")
-                    <div class="col-lg-{{(count($Categories)>0)? "9":"12"}}">
+                    <div class="col-lg-{{(count($Categories)>0)? "9":"9"}}">
                         <h1 class="main-title">
                             @if($Topic->icon !="")
                                 <i class="fa {!! $Topic->icon !!} "></i>&nbsp;
@@ -72,7 +72,7 @@
                     </div>
 
                 @endif
-                <div class="col-lg-{{(count($Categories)>0)? "6":"9"}}">
+                <div class="col-lg-{{(count($Categories)>0)? "9":"9"}}">
 
                     <article>
                         @if($WebmasterSection->type==2 && $Topic->video_file!="")
@@ -602,158 +602,158 @@
 
                     </article>
                 </div>
-                <div class="col-lg-3">
-                    <div>
-                        <div class="topic-info">
+                {{--<div class="col-lg-3">--}}
+                    {{--<div>--}}
+                        {{--<div class="topic-info">--}}
                             {{--<div class="info">--}}
                                 {{--<i class="fa fa-user"></i> <a--}}
                                         {{--href="{{route('FrontendUserTopics',$Topic->created_by)}}">{{$Topic->user->name}}</a>--}}
                             {{--</div>--}}
-                            @if($WebmasterSection->date_status)
-                                <div class="info">
-                                    <i class="fa fa-calendar"></i> {!! $Topic->date  !!}
-                                </div>
-                            @endif
-                            <div class="info">
-                                <i class="fa fa-eye"></i> {{ trans('frontLang.visits') }} : {!! $Topic->visits !!}
-                            </div>
-                            @if($WebmasterSection->comments_status)
-                                <div class="info">
-                                    <i class="fa fa-comments"></i> {{ trans('frontLang.comments') }}
-                                    : {{count($Topic->approvedComments)}}
-                                </div>
-                            @endif
-                            <br>
-                            {{ trans('frontLang.share') }} :
-                            <ul class="social-network share">
-                                <li><a href="{{ Helper::SocialShare("facebook", $PageTitle)}}" class="facebook"
-                                       data-placement="top"
-                                       title="Facebook" target="_blank"><i class="fa fa-facebook"></i></a></li>
-                                <li><a href="{{ Helper::SocialShare("twitter", $PageTitle)}}" class="twitter"
-                                       data-placement="top" title="Twitter"
-                                       target="_blank"><i
-                                                class="fa fa-twitter"></i></a></li>
-                                <li><a href="{{ Helper::SocialShare("google", $PageTitle)}}" class="google"
-                                       data-placement="top"
-                                       title="Google+"
-                                       target="_blank"><i
-                                                class="fa fa-google-plus"></i></a></li>
-                                <li><a href="{{ Helper::SocialShare("linkedin", $PageTitle)}}" class="linkedin"
-                                       data-placement="top" title="linkedin"
-                                       target="_blank"><i
-                                                class="fa fa-linkedin"></i></a></li>
-                                <li><a href="{{ Helper::SocialShare("tumblr", $PageTitle)}}" class="pintrest"
-                                       data-placement="top" title="Pinterest"
-                                       target="_blank"><i
-                                                class="fa fa-pinterest"></i></a></li>
-                            </ul>
+                            {{--@if($WebmasterSection->date_status)--}}
+                                {{--<div class="info">--}}
+                                    {{--<i class="fa fa-calendar"></i> {!! $Topic->date  !!}--}}
+                                {{--</div>--}}
+                            {{--@endif--}}
+                            {{--<div class="info">--}}
+                                {{--<i class="fa fa-eye"></i> {{ trans('frontLang.visits') }} : {!! $Topic->visits !!}--}}
+                            {{--</div>--}}
+                            {{--@if($WebmasterSection->comments_status)--}}
+                                {{--<div class="info">--}}
+                                    {{--<i class="fa fa-comments"></i> {{ trans('frontLang.comments') }}--}}
+                                    {{--: {{count($Topic->approvedComments)}}--}}
+                                {{--</div>--}}
+                            {{--@endif--}}
+                            {{--<br>--}}
+                            {{--{{ trans('frontLang.share') }} :--}}
+                            {{--<ul class="social-network share">--}}
+                                {{--<li><a href="{{ Helper::SocialShare("facebook", $PageTitle)}}" class="facebook"--}}
+                                       {{--data-placement="top"--}}
+                                       {{--title="Facebook" target="_blank"><i class="fa fa-facebook"></i></a></li>--}}
+                                {{--<li><a href="{{ Helper::SocialShare("twitter", $PageTitle)}}" class="twitter"--}}
+                                       {{--data-placement="top" title="Twitter"--}}
+                                       {{--target="_blank"><i--}}
+                                                {{--class="fa fa-twitter"></i></a></li>--}}
+                                {{--<li><a href="{{ Helper::SocialShare("google", $PageTitle)}}" class="google"--}}
+                                       {{--data-placement="top"--}}
+                                       {{--title="Google+"--}}
+                                       {{--target="_blank"><i--}}
+                                                {{--class="fa fa-google-plus"></i></a></li>--}}
+                                {{--<li><a href="{{ Helper::SocialShare("linkedin", $PageTitle)}}" class="linkedin"--}}
+                                       {{--data-placement="top" title="linkedin"--}}
+                                       {{--target="_blank"><i--}}
+                                                {{--class="fa fa-linkedin"></i></a></li>--}}
+                                {{--<li><a href="{{ Helper::SocialShare("tumblr", $PageTitle)}}" class="pintrest"--}}
+                                       {{--data-placement="top" title="Pinterest"--}}
+                                       {{--target="_blank"><i--}}
+                                                {{--class="fa fa-pinterest"></i></a></li>--}}
+                            {{--</ul>--}}
 
-                        </div>
+                        {{--</div>--}}
 
-                    </div>
-
-
-                    @if($WebmasterSection->order_status)
-                        <div id="order">
-                            <div class="row">
-                                <div class="col-lg-12">
-                                    <br>
-                                    <h4><i class="fa fa-cart-plus"></i> {{ trans('frontLang.orderForm') }}</h4>
-                                    <div class="newcomment">
-                                        <div id="ordersendmessage"><i class="fa fa-check-circle"></i>
-                                            &nbsp;{{ trans('frontLang.youOrderSent') }}
-                                        </div>
-                                        <div id="ordererrormessage">{{ trans('frontLang.youMessageNotSent') }}</div>
-
-                                        {{Form::open(['route'=>['Home'],'method'=>'POST','class'=>'orderForm'])}}
-                                        <div class="form-group">
-                                            {!! Form::text('order_name',"", array('placeholder' => trans('frontLang.yourName'),'class' => 'form-control','id'=>'order_name', 'data-msg'=> trans('frontLang.enterYourName'),'data-rule'=>'minlen:4')) !!}
-                                            <div class="alert alert-warning validation"></div>
-                                        </div>
-                                        <div class="form-group">
-                                            {!! Form::text('order_phone',"", array('placeholder' => trans('frontLang.phone'),'class' => 'form-control','id'=>'order_phone', 'data-msg'=> trans('frontLang.enterYourPhone'),'data-rule'=>'minlen:4')) !!}
-                                            <div class="validation"></div>
-                                        </div>
-                                        <div class="form-group">
-                                            {!! Form::email('order_email',"", array('placeholder' => trans('frontLang.yourEmail'),'class' => 'form-control','id'=>'order_email', 'data-msg'=> trans('frontLang.enterYourEmail'),'data-rule'=>'email')) !!}
-                                            <div class="validation"></div>
-                                        </div>
-                                        <div class="form-group">
-                                            {!! Form::number('order_qty',"", array('placeholder' => trans('frontLang.quantity'),'class' => 'form-control','id'=>'order_qty', 'data-msg'=> trans('frontLang.yourQuantity'),'data-rule'=>'minlen:1','min'=>'1')) !!}
-                                            <div class="validation"></div>
-                                        </div>
-                                        <div class="form-group">
-                                            {!! Form::textarea('order_message','', array('placeholder' => trans('frontLang.notes'),'class' => 'form-control','id'=>'order_message','rows'=>'5')) !!}
-                                            <div class="validation"></div>
-                                        </div>
-
-                                        @if(env('NOCAPTCHA_STATUS', false))
-                                            <div class="form-group">
-                                                {!! app('captcha')->display($attributes = [], $lang = trans('backLang.code')) !!}
-                                            </div>
-                                        @endif
-                                        <div>
-                                            <input type="hidden" name="topic_id" value="{{$Topic->id}}">
-                                            <button type="submit"
-                                                    class="btn btn-theme">{{ trans('frontLang.sendOrder') }}</button>
-                                        </div>
-                                        {{Form::close()}}
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    @endif
+                    {{--</div>--}}
 
 
+                    {{--@if($WebmasterSection->order_status)--}}
+                        {{--<div id="order">--}}
+                            {{--<div class="row">--}}
+                                {{--<div class="col-lg-12">--}}
+                                    {{--<br>--}}
+                                    {{--<h4><i class="fa fa-cart-plus"></i> {{ trans('frontLang.orderForm') }}</h4>--}}
+                                    {{--<div class="newcomment">--}}
+                                        {{--<div id="ordersendmessage"><i class="fa fa-check-circle"></i>--}}
+                                            {{--&nbsp;{{ trans('frontLang.youOrderSent') }}--}}
+                                        {{--</div>--}}
+                                        {{--<div id="ordererrormessage">{{ trans('frontLang.youMessageNotSent') }}</div>--}}
 
-                    @if($WebmasterSection->comments_status)
-                        <div id="new-comment">
-                            <div class="row">
-                                <div class="col-lg-12">
-                                    <br>
-                                    <h4><i class="fa fa-plus"></i> {{ trans('frontLang.newComment') }}</h4>
-                                    <div class="newcomment">
-                                        <div id="sendmessage"><i class="fa fa-check-circle"></i>
-                                            &nbsp;{{ trans('frontLang.youCommentSent') }} &nbsp; <a
-                                                    href="{{url()->current()}}"><i
-                                                        class="fa fa-refresh"></i> {{ trans('frontLang.refresh') }}
-                                            </a>
-                                        </div>
-                                        <div id="errormessage">{{ trans('frontLang.youMessageNotSent') }}</div>
+                                        {{--{{Form::open(['route'=>['Home'],'method'=>'POST','class'=>'orderForm'])}}--}}
+                                        {{--<div class="form-group">--}}
+                                            {{--{!! Form::text('order_name',"", array('placeholder' => trans('frontLang.yourName'),'class' => 'form-control','id'=>'order_name', 'data-msg'=> trans('frontLang.enterYourName'),'data-rule'=>'minlen:4')) !!}--}}
+                                            {{--<div class="alert alert-warning validation"></div>--}}
+                                        {{--</div>--}}
+                                        {{--<div class="form-group">--}}
+                                            {{--{!! Form::text('order_phone',"", array('placeholder' => trans('frontLang.phone'),'class' => 'form-control','id'=>'order_phone', 'data-msg'=> trans('frontLang.enterYourPhone'),'data-rule'=>'minlen:4')) !!}--}}
+                                            {{--<div class="validation"></div>--}}
+                                        {{--</div>--}}
+                                        {{--<div class="form-group">--}}
+                                            {{--{!! Form::email('order_email',"", array('placeholder' => trans('frontLang.yourEmail'),'class' => 'form-control','id'=>'order_email', 'data-msg'=> trans('frontLang.enterYourEmail'),'data-rule'=>'email')) !!}--}}
+                                            {{--<div class="validation"></div>--}}
+                                        {{--</div>--}}
+                                        {{--<div class="form-group">--}}
+                                            {{--{!! Form::number('order_qty',"", array('placeholder' => trans('frontLang.quantity'),'class' => 'form-control','id'=>'order_qty', 'data-msg'=> trans('frontLang.yourQuantity'),'data-rule'=>'minlen:1','min'=>'1')) !!}--}}
+                                            {{--<div class="validation"></div>--}}
+                                        {{--</div>--}}
+                                        {{--<div class="form-group">--}}
+                                            {{--{!! Form::textarea('order_message','', array('placeholder' => trans('frontLang.notes'),'class' => 'form-control','id'=>'order_message','rows'=>'5')) !!}--}}
+                                            {{--<div class="validation"></div>--}}
+                                        {{--</div>--}}
 
-                                        {{Form::open(['route'=>['Home'],'method'=>'POST','class'=>'commentForm'])}}
-                                        <div class="form-group">
-                                            {!! Form::text('comment_name',"", array('placeholder' => trans('frontLang.yourName'),'class' => 'form-control','id'=>'comment_name', 'data-msg'=> trans('frontLang.enterYourName'),'data-rule'=>'minlen:4')) !!}
-                                            <div class="alert alert-warning validation"></div>
-                                        </div>
-                                        <div class="form-group">
-                                            {!! Form::email('comment_email',"", array('placeholder' => trans('frontLang.yourEmail'),'class' => 'form-control','id'=>'comment_email', 'data-msg'=> trans('frontLang.enterYourEmail'),'data-rule'=>'email')) !!}
-                                            <div class="validation"></div>
-                                        </div>
-                                        <div class="form-group">
-                                            {!! Form::textarea('comment_message','', array('placeholder' => trans('frontLang.comment'),'class' => 'form-control','id'=>'comment_message','rows'=>'5', 'data-msg'=> trans('frontLang.enterYourComment'),'data-rule'=>'required')) !!}
-                                            <div class="validation"></div>
-                                        </div>
-
-                                        @if(env('NOCAPTCHA_STATUS', false))
-                                            <div class="form-group">
-                                                {!! app('captcha')->display($attributes = [], $lang = trans('backLang.code')) !!}
-                                            </div>
-                                        @endif
-                                        <div>
-                                            <input type="hidden" name="topic_id" value="{{$Topic->id}}">
-                                            <button type="submit"
-                                                    class="btn btn-theme">{{ trans('frontLang.sendComment') }}</button>
-                                        </div>
-                                        {{Form::close()}}
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    @endif
+                                        {{--@if(env('NOCAPTCHA_STATUS', false))--}}
+                                            {{--<div class="form-group">--}}
+                                                {{--{!! app('captcha')->display($attributes = [], $lang = trans('backLang.code')) !!}--}}
+                                            {{--</div>--}}
+                                        {{--@endif--}}
+                                        {{--<div>--}}
+                                            {{--<input type="hidden" name="topic_id" value="{{$Topic->id}}">--}}
+                                            {{--<button type="submit"--}}
+                                                    {{--class="btn btn-theme">{{ trans('frontLang.sendOrder') }}</button>--}}
+                                        {{--</div>--}}
+                                        {{--{{Form::close()}}--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                    {{--@endif--}}
 
 
-                </div>
+
+                    {{--@if($WebmasterSection->comments_status)--}}
+                        {{--<div id="new-comment">--}}
+                            {{--<div class="row">--}}
+                                {{--<div class="col-lg-12">--}}
+                                    {{--<br>--}}
+                                    {{--<h4><i class="fa fa-plus"></i> {{ trans('frontLang.newComment') }}</h4>--}}
+                                    {{--<div class="newcomment">--}}
+                                        {{--<div id="sendmessage"><i class="fa fa-check-circle"></i>--}}
+                                            {{--&nbsp;{{ trans('frontLang.youCommentSent') }} &nbsp; <a--}}
+                                                    {{--href="{{url()->current()}}"><i--}}
+                                                        {{--class="fa fa-refresh"></i> {{ trans('frontLang.refresh') }}--}}
+                                            {{--</a>--}}
+                                        {{--</div>--}}
+                                        {{--<div id="errormessage">{{ trans('frontLang.youMessageNotSent') }}</div>--}}
+
+                                        {{--{{Form::open(['route'=>['Home'],'method'=>'POST','class'=>'commentForm'])}}--}}
+                                        {{--<div class="form-group">--}}
+                                            {{--{!! Form::text('comment_name',"", array('placeholder' => trans('frontLang.yourName'),'class' => 'form-control','id'=>'comment_name', 'data-msg'=> trans('frontLang.enterYourName'),'data-rule'=>'minlen:4')) !!}--}}
+                                            {{--<div class="alert alert-warning validation"></div>--}}
+                                        {{--</div>--}}
+                                        {{--<div class="form-group">--}}
+                                            {{--{!! Form::email('comment_email',"", array('placeholder' => trans('frontLang.yourEmail'),'class' => 'form-control','id'=>'comment_email', 'data-msg'=> trans('frontLang.enterYourEmail'),'data-rule'=>'email')) !!}--}}
+                                            {{--<div class="validation"></div>--}}
+                                        {{--</div>--}}
+                                        {{--<div class="form-group">--}}
+                                            {{--{!! Form::textarea('comment_message','', array('placeholder' => trans('frontLang.comment'),'class' => 'form-control','id'=>'comment_message','rows'=>'5', 'data-msg'=> trans('frontLang.enterYourComment'),'data-rule'=>'required')) !!}--}}
+                                            {{--<div class="validation"></div>--}}
+                                        {{--</div>--}}
+
+                                        {{--@if(env('NOCAPTCHA_STATUS', false))--}}
+                                            {{--<div class="form-group">--}}
+                                                {{--{!! app('captcha')->display($attributes = [], $lang = trans('backLang.code')) !!}--}}
+                                            {{--</div>--}}
+                                        {{--@endif--}}
+                                        {{--<div>--}}
+                                            {{--<input type="hidden" name="topic_id" value="{{$Topic->id}}">--}}
+                                            {{--<button type="submit"--}}
+                                                    {{--class="btn btn-theme">{{ trans('frontLang.sendComment') }}</button>--}}
+                                        {{--</div>--}}
+                                        {{--{{Form::close()}}--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                    {{--@endif--}}
+
+
+                {{--</div>--}}
 
             </div>
         </div>
@@ -772,7 +772,7 @@
         $map_details_var = "details_" . trans('backLang.boxCode');
         ?>
         <script type="text/javascript"
-                src="http://maps.google.com/maps/api/js?key=AIzaSyAgzruFTTvea0LEmw_jAqknqskKDuJK7dM"></script>
+                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAgzruFTTvea0LEmw_jAqknqskKDuJK7dM"></script>
 
         <script type="text/javascript">
             // var iconURLPrefix = 'http://maps.google.com/mapfiles/ms/icons/';

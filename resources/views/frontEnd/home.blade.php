@@ -303,10 +303,10 @@
                                                     @elseif($customField->type ==6)
                                                         {{--Select--}}
                                                         <div class="row field-row">
-                                                            <div class="col-lg-6">
+                                                            <div class="col-xs-6">
                                                                 {!!  $cf_title !!} :
                                                             </div>
-                                                            <div class="col-lg-6">
+                                                            <div class="col-xs-6">
                                                                 <?php
                                                                 $cf_details_var = "details_" . trans('backLang.boxCode');
                                                                 $cf_details_var2 = "details_en" . trans('backLang.boxCodeOther');
@@ -331,40 +331,40 @@
                                                     @elseif($customField->type ==5)
                                                         {{--Date & Time--}}
                                                         <div class="row field-row">
-                                                            <div class="col-lg-6">
+                                                            <div class="col-xs-6">
                                                                 {!!  $cf_title !!} :
                                                             </div>
-                                                            <div class="col-lg-6">
+                                                            <div class="col-xs-6">
                                                                 {!! date('Y-m-d H:i:s', strtotime($cf_saved_val)) !!}
                                                             </div>
                                                         </div>
                                                     @elseif($customField->type ==4)
                                                         {{--Date--}}
                                                         <div class="row field-row">
-                                                            <div class="col-lg-6">
+                                                            <div class="col-xs-6">
                                                                 {!!  $cf_title !!} :
                                                             </div>
-                                                            <div class="col-lg-6">
+                                                            <div class="col-xs-6">
                                                                 {!! date('Y-m-d', strtotime($cf_saved_val)) !!}
                                                             </div>
                                                         </div>
                                                     @elseif($customField->type ==3)
                                                         {{--Email Address--}}
                                                         <div class="row field-row">
-                                                            <div class="col-lg-6">
+                                                            <div class="col-xs-6">
                                                                 {!!  $cf_title !!} :
                                                             </div>
-                                                            <div class="col-lg-6">
+                                                            <div class="col-xs-6">
                                                                 {!! $cf_saved_val !!}
                                                             </div>
                                                         </div>
                                                     @elseif($customField->type ==2)
                                                         {{--Number--}}
                                                         <div class="row field-row">
-                                                            <div class="col-lg-6">
+                                                            <div class="col-xs-6">
                                                                 {!!  $cf_title !!} :
                                                             </div>
-                                                            <div class="col-lg-6">
+                                                            <div class="col-xs-6">
                                                                 {!! $cf_saved_val !!}
                                                             </div>
                                                         </div>
@@ -373,10 +373,10 @@
                                                     @else
                                                         {{--Text Box--}}
                                                         <div class="row field-row">
-                                                            <div class="col-lg-6">
+                                                            <div class="col-xs-6">
                                                                 {!!  $cf_title !!} :
                                                             </div>
-                                                            <div class="col-lg-6">
+                                                            <div class="col-xs-6">
                                                                 {!! $cf_saved_val !!}
                                                             </div>
                                                         </div>
@@ -389,11 +389,11 @@
                             @endif
                             {{--End of -- Additional Feilds--}}
 
-                            @if(strip_tags($HomeTopic->$details) !="")
-                                <p>
-                                    {!! str_limit(strip_tags($HomeTopic->$details), $limit = 100, $end = '...') !!}
-                                </p>
-                            @endif
+                            {{--@if(strip_tags($HomeTopic->$details) !="")--}}
+                                {{--<p>--}}
+                                    {{--{!! str_limit(strip_tags($HomeTopic->$details), $limit = 100, $end = '...') !!}--}}
+                                {{--</p>--}}
+                            {{--@endif--}}
                             <a href="{{ $topic_link_url }}"
                                class="btn btn-primary">{{ trans('frontLang.readMore') }}</a>
 

@@ -82,7 +82,41 @@
                 </ul>
             </div>
 
+
+
+
         @endif
+
+            <div class="widget">
+                <div class="topic-info">
+
+                    {{ trans('frontLang.share') }} :
+                    <ul class="social-network share">
+                        <li><a href="{{ Helper::SocialShare("facebook", $PageTitle)}}" class="facebook"
+                               data-placement="top"
+                               title="Facebook" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="{{ Helper::SocialShare("twitter", $PageTitle)}}" class="twitter"
+                               data-placement="top" title="Twitter"
+                               target="_blank"><i
+                                        class="fa fa-twitter"></i></a></li>
+                        <li><a href="{{ Helper::SocialShare("google", $PageTitle)}}" class="google"
+                               data-placement="top"
+                               title="Google+"
+                               target="_blank"><i
+                                        class="fa fa-google-plus"></i></a></li>
+                        <li><a href="{{ Helper::SocialShare("linkedin", $PageTitle)}}" class="linkedin"
+                               data-placement="top" title="linkedin"
+                               target="_blank"><i
+                                        class="fa fa-linkedin"></i></a></li>
+                        <li><a href="{{ Helper::SocialShare("tumblr", $PageTitle)}}" class="pintrest"
+                               data-placement="top" title="Pinterest"
+                               target="_blank"><i
+                                        class="fa fa-pinterest"></i></a></li>
+                    </ul>
+
+                </div>
+
+            </div>
 
         {{--<div class="widget  hidden-xs">--}}
             {{--<h5 class="widgetheading">{{ trans('backLang.search') }}</h5>--}}
