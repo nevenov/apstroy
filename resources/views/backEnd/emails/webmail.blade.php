@@ -11,7 +11,7 @@
     <link href='http://fonts.googleapis.com/css?family=Questrial' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,600' rel='stylesheet' type='text/css'>
 
-    <title>Notification 8 - Responsive Email Template</title><!-- Responsive Styles and Valid Styles -->
+    <title></title><!-- Responsive Styles and Valid Styles -->
 
     <style type="text/css">
 
@@ -100,9 +100,9 @@
 
 
 
-<table border="0" width="100%" cellpadding="0" cellspacing="0" bgcolor="2b2e34" class="body_color" style="background-color: rgb(46, 62, 78);">
+<table border="0" width="100%" cellpadding="0" cellspacing="0" bgcolor="2b2e34" class="body_color" style="background-color: #7a423e;">
 
-    <tbody><tr><td height="120" style="font-size: 120px; line-height: 120px;">&nbsp;</td></tr>
+    <tbody><tr><td height="20" style="font-size: 20px; line-height: 20px;">&nbsp;</td></tr>
 
     <tr>
         <td>
@@ -153,11 +153,6 @@
                 </tr>
 
                 <tr><td height="40" style="font-size: 40px; line-height: 40px;">&nbsp;</td></tr>
-
-
-
-
-                <tr><td height="50" style="font-size: 50px; line-height: 50px;">&nbsp;</td></tr>
                 </tbody></table>
         </td>
     </tr>

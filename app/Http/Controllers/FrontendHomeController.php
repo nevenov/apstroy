@@ -998,7 +998,7 @@ class FrontendHomeController extends Controller
         if ($WebsiteSettings->notify_messages_status) {
             if (env('MAIL_USERNAME') != "") {
                 Mail::send('backEnd.emails.webmail', [
-                    'title' => "NEW MESSAGE:" . $request->contact_subject,
+                    'title' => $request->contact_subject,
                     'details' => $request->contact_message,
                     'websiteURL' => $site_url,
                     'websiteName' => $site_title
