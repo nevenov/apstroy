@@ -32,9 +32,16 @@
         <div class="container">
             <span class="pull-right"><a href="{{ route('Home') }}"><i class="fa fa-home"></i></a> /
                 @if(!empty($CurrentCategory))
-                    {!! trans('backLang.'.$WebmasterSection->name) !!}
+                    <?php
+                    $category_title_var = "title_" . trans('backLang.boxCode');
+                    ?>
+                    {{ $CurrentCategory->$category_title_var }}
                 @else
-                    {!! trans('backLang.'.$WebmasterSection->name) !!}
+                    @if($WebmasterSection->name=="sitePages")
+                        {{ $title }}
+                    @else
+                        {!! trans('backLang.'.$WebmasterSection->name) !!}
+                    @endif
                 @endif
             </span>
             <h2>
