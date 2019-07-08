@@ -158,7 +158,7 @@ return [
     'langVar' => 'Language Variable',
 
     // Webmaster Sections
-    'sitePages' => 'About Pomorie',
+    'sitePages' => 'Site Pages',
     'photos' => 'Photos',
     'blog' => 'Projects',
     'projects' => 'Projects',
@@ -465,7 +465,7 @@ return [
     'signIn' => 'Sign in',
     'keepMeSignedIn' => 'Keep me signed in',
     'signedInToControl' => 'Sign in to CONTROL',
-    'control' => 'Menu',
+    'control' => 'Admin',
     'resetPassword' => 'Reset Password',
     'confirmPassword' => 'Confirm Password',
     'newPassword' => 'New Password',
