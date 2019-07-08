@@ -106,7 +106,7 @@
 
     <tr>
         <td>
-            <table border="0" align="center" width="529" cellpadding="0" cellspacing="0" class="container590 bodybg_color" style="background-color: #fff;background-size: 100% 100%; background-position: top center; background-repeat: no-repeat;">
+            <table border="0" align="center" width="95%" cellpadding="0" cellspacing="0" class="container590 bodybg_color" style="background-color: #fff;background-size: 100% 100%; background-position: top center; background-repeat: no-repeat;">
                 <tbody><tr>
                     <td>
                         <table border="0" align="center" width="460" cellpadding="0" cellspacing="0" class="container590 bodybg_color">
@@ -183,7 +183,6 @@
         </td>
     </tr>
 
-    <tr><td height="50" style="font-size: 50px; line-height: 50px;">&nbsp;</td></tr>
     <tr><td height="50" style="font-size: 50px; line-height: 50px;">&nbsp;</td></tr>
 
     </tbody></table>

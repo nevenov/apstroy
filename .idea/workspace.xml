@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bf8fbf3f-963f-43eb-bf6f-bc8b0c5fdd96" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/FrontendHomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/FrontendHomeController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/backEnd/emails/webmail.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backEnd/emails/webmail.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -52,8 +50,8 @@
       <file leaf-file-name="webmail.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/backEnd/emails/webmail.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="59" column="37" selection-start-line="59" selection-start-column="25" selection-end-line="59" selection-end-column="37" />
+            <state relative-caret-position="333">
+              <caret line="108" column="55" selection-start-line="108" selection-start-column="55" selection-end-line="108" selection-end-column="55" />
               <folding>
                 <element signature="n#style#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -96,12 +94,12 @@
       <find>Responsive Email Template</find>
       <find>contactPage</find>
       <find>$title</find>
-      <find>contact</find>
       <find>height=</find>
       <find>background-color: #fff</find>
       <find>&lt;table</find>
       <find>container580</find>
       <find>container590</find>
+      <find>contact</find>
     </findStrings>
     <replaceStrings>
       <replace>_it</replace>
@@ -384,12 +382,12 @@
       <workItem from="1562313484722" duration="8762000" />
       <workItem from="1562490777763" duration="1458000" />
       <workItem from="1562565253081" duration="221000" />
-      <workItem from="1562581986445" duration="2712000" />
+      <workItem from="1562581986445" duration="3198000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="82798000" />
+    <option name="totallyTimeSpent" value="83284000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -402,7 +400,7 @@
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32901135" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21331316" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21331316" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -758,8 +756,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/backEnd/emails/webmail.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="59" column="37" selection-start-line="59" selection-start-column="25" selection-end-line="59" selection-end-column="37" />
+        <state relative-caret-position="333">
+          <caret line="108" column="55" selection-start-line="108" selection-start-column="55" selection-end-line="108" selection-end-column="55" />
           <folding>
             <element signature="n#style#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
