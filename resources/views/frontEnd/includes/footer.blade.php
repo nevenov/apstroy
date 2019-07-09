@@ -195,6 +195,9 @@ if (Helper::GeneralSiteSettings("style_footer") != 1) {
                 </div>
                 <div class="col-lg-6">
                     <ul class="social-network">
+                        <li><a style="width: 100%; font-size: 12px;" href="https://simplephpscripts.com" data-placement="top" title="SimplePHPscripts"
+                               target="_blank"><i
+                                        class="fa fa-check-circle-o"></i> Created by SimplePHPscripts</a></li>
                         @if($WebsiteSettings->social_link1)
                             <li><a href="{{$WebsiteSettings->social_link1}}" data-placement="top" title="Facebook"
                                    target="_blank"><i
