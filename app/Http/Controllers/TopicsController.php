@@ -17,6 +17,7 @@ use Auth;
 use File;
 use Helper;
 use Illuminate\Http\Request;
+use Intervention\Image\Facades\Image;
 use Redirect;
 
 class TopicsController extends Controller
@@ -110,7 +111,7 @@ class TopicsController extends Controller
         if (!empty($WebmasterSection)) {
             //
             $this->validate($request, [
-                'photo_file' => 'mimes:png,jpeg,jpg,gif|max:3000',
+                'photo_file' => 'mimes:png,jpeg,jpg,gif|max:8000',
                 'audio_file' => 'mimes:mpga,wav', // mpga = mp3
                 'video_file' => 'mimes:mp4,ogv,webm'
             ]);
@@ -131,6 +132,11 @@ class TopicsController extends Controller
                         9999) . '.' . $request->file($formFileName)->getClientOriginalExtension();
                 $path = $this->getUploadPath();
                 $request->file($formFileName)->move($path, $fileFinalName);
+
+//                $imageResize = Image::make($path . $fileFinalName)->widen(1000, function ($constraint) {
+//                    $constraint->upsize();
+//                });
+//                $imageResize->save();
             }
 
             $formFileName = "audio_file";
@@ -351,7 +357,7 @@ class TopicsController extends Controller
 
 
                 $this->validate($request, [
-                    'photo_file' => 'mimes:png,jpeg,jpg,gif|max:3000',
+                    'photo_file' => 'mimes:png,jpeg,jpg,gif|max:8000',
                     'audio_file' => 'mimes:mpga,wav', // mpga = mp3
                     'video_file' => 'mimes:mp4,ogv,webm'
                 ]);
@@ -370,6 +376,11 @@ class TopicsController extends Controller
                             9999) . '.' . $request->file($formFileName)->getClientOriginalExtension();
                     $path = $this->getUploadPath();
                     $request->file($formFileName)->move($path, $fileFinalName);
+
+//                    $imageResize = Image::make($path . $fileFinalName)->widen(1000, function ($constraint) {
+//                        $constraint->upsize();
+//                    });
+//                    $imageResize->save();
                 }
 
 
@@ -796,7 +807,7 @@ class TopicsController extends Controller
         if (!empty($WebmasterSection)) {
             //
             $this->validate($request, [
-                'file' => 'image|max:3000',
+                'file' => 'image|max:8000',
             ]);
 
             $next_nor_no = Photo::where('topic_id', '=', $id)->max('row_no');
@@ -817,9 +828,13 @@ class TopicsController extends Controller
                         9999) . '.' . $request->file($formFileName)->getClientOriginalExtension();
                 $path = $this->getUploadPath();
                 $request->file($formFileName)->move($path, $fileFinalName);
+
+
+
             }
             // End of Upload Files
             if ($fileFinalName != "") {
+
                 $Photo = new Photo;
                 $Photo->row_no = $next_nor_no;
                 $Photo->file = $fileFinalName;
@@ -827,6 +842,12 @@ class TopicsController extends Controller
                 $Photo->topic_id = $id;
                 $Photo->created_by = Auth::user()->id;
                 $Photo->save();
+
+//                $path = $this->getUploadPath();
+//                $imageResize = Image::make($path . $fileFinalName)->widen(1000, function ($constraint) {
+//                    $constraint->upsize();
+//                });
+//                $imageResize->save();
 
                 return response()->json('success', 200);
             } else {
@@ -1907,7 +1928,7 @@ class TopicsController extends Controller
     {
         //
         $this->validate($request, [
-            'file' => 'image|max:5000',
+            'file' => 'image|max:8000',
         ]);
 
         // Start of Upload Files
@@ -1921,6 +1942,12 @@ class TopicsController extends Controller
                     9999) . '.' . $request->file($formFileName)->getClientOriginalExtension();
             $path = $this->getUploadPath();
             $request->file($formFileName)->move($path, $fileFinalName);
+
+//            $imageResize = Image::make($path . $fileFinalName)->widen(1000, function ($constraint) {
+//                $constraint->upsize();
+//            });
+//            $imageResize->save();
+
         }
         // End of Upload Files
         if ($fileFinalName != "") {
