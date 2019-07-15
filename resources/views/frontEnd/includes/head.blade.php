@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="{{ URL::asset('frontEnd/js/bootstrap/css/bootstrap.css') }}"/>
 <link rel="stylesheet" href="{{ URL::asset('frontEnd/css/font-awesome.css') }}"/>
 <link rel="stylesheet" href="{{ URL::asset('frontEnd/css/style.css') }}"/>
-<link rel="stylesheet" href="{{ URL::asset('frontEnd/css/audio-player.css') }}"/>
+{{--<link rel="stylesheet" href="{{ URL::asset('frontEnd/css/audio-player.css') }}"/>--}}
 <!-- Owl stylesheet -->
 <link rel="stylesheet" href="{{ URL::asset('frontEnd/js/owl-carousel/assets/owl.carousel.min.css') }}">
 <link rel="stylesheet" href="{{ URL::asset('frontEnd/js/owl-carousel/assets/owl.theme.default.min.css') }}">
@@ -22,9 +22,9 @@
 <!-- Magnific Popup core CSS file -->
 <link rel="stylesheet" href="{{ URL::asset('frontEnd/js/magnific-popup/magnific-popup.css') }}">
 
-@if( trans('backLang.direction')=="rtl")
-    <link href="{{ URL::asset('frontEnd/css/rtl.css') }}" rel="stylesheet"/>
-@endif
+{{--@if( trans('backLang.direction')=="rtl")--}}
+    {{--<link href="{{ URL::asset('frontEnd/css/rtl.css') }}" rel="stylesheet"/>--}}
+{{--@endif--}}
 
 <!-- Favicon and Touch Icons -->
 @if(Helper::GeneralSiteSettings("style_fav") !="")
