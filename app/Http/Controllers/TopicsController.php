@@ -133,6 +133,10 @@ class TopicsController extends Controller
                 $path = $this->getUploadPath();
                 $request->file($formFileName)->move($path, $fileFinalName);
 
+                $filePath = $path . $fileFinalName;
+
+                $this->Resize_File($filePath, 1000, 0);
+
 //                $imageResize = Image::make($path . $fileFinalName)->widen(1000, function ($constraint) {
 //                    $constraint->upsize();
 //                });
@@ -297,6 +301,77 @@ class TopicsController extends Controller
         $this->uploadPath = Config::get('app.APP_URL') . $uploadPath;
     }
 
+
+    public function Resize_File($full_file, $max_width, $max_height, $thumbnail="")
+    {
+
+        if (preg_match("/\.png$/i", $full_file)) {
+            $img = imagecreatefrompng($full_file);
+        }
+
+        if (preg_match("/\.(jpg|jpeg)$/i", $full_file)) {
+            $img = imagecreatefromjpeg($full_file);
+        }
+
+        if (preg_match("/\.gif$/i", $full_file)) {
+            $img = imagecreatefromgif($full_file);
+        }
+
+        $FullImage_width = imagesx($img);
+        $FullImage_height = imagesy($img);
+
+        if (isset($max_width) && isset($max_height) && $max_width != 0 && $max_height != 0 && $FullImage_width>$max_width && $FullImage_height>$max_height) {
+            $new_width = $max_width;
+            $new_height = $max_height;
+        } elseif (isset($max_width) && $max_width != 0 && $FullImage_width>$max_width) {
+            $new_width = $max_width;
+            $new_height = ((int)($new_width * $FullImage_height) / $FullImage_width);
+        } elseif (isset($max_height) && $max_height != 0 && $FullImage_height>$max_height) {
+            $new_height = $max_height;
+            $new_width = ((int)($new_height * $FullImage_width) / $FullImage_height);
+        } else {
+            $new_height = $FullImage_height;
+            $new_width = $FullImage_width;
+        }
+
+        $full_id = imagecreatetruecolor((int)$new_width, (int)$new_height);
+        if (preg_match("/\.png$/i", $full_file) or preg_match("/\.gif$/i", $full_file)) {
+            imagecolortransparent($full_id, imagecolorallocatealpha($full_id, 0, 0, 0, 0));
+        }
+        imagecopyresampled($full_id, $img, 0, 0, 0, 0, (int)$new_width, (int)$new_height, $FullImage_width, $FullImage_height);
+
+
+        if (preg_match("/\.(jpg|jpeg)$/i", $full_file)) {
+            if($thumbnail!="") {
+                imagejpeg($full_id, $thumbnail, 100);
+            } else {
+                imagejpeg($full_id, $full_file, 100);
+            }
+        }
+
+        if (preg_match("/\.png$/i", $full_file)) {
+            if($thumbnail!="") {
+                imagepng($full_id, $thumbnail);
+            } else {
+                imagepng($full_id, $full_file);
+            }
+        }
+
+        if (preg_match("/\.gif$/i", $full_file)) {
+            if($thumbnail!="") {
+                imagegif($full_id, $thumbnail);
+            } else {
+                imagegif($full_id, $full_file);
+            }
+        }
+
+        imagedestroy($full_id);
+        unset($max_width);
+        unset($max_height);
+    }
+
+
+
     /**
      * Show the form for editing the specified resource.
      *
@@ -376,6 +451,10 @@ class TopicsController extends Controller
                             9999) . '.' . $request->file($formFileName)->getClientOriginalExtension();
                     $path = $this->getUploadPath();
                     $request->file($formFileName)->move($path, $fileFinalName);
+
+                    $filePath = $path . $fileFinalName;
+
+                    $this->Resize_File($filePath, 1000, 0);
 
 //                    $imageResize = Image::make($path . $fileFinalName)->widen(1000, function ($constraint) {
 //                        $constraint->upsize();
@@ -842,6 +921,10 @@ class TopicsController extends Controller
                 $Photo->topic_id = $id;
                 $Photo->created_by = Auth::user()->id;
                 $Photo->save();
+
+                $filePath = $path . $fileFinalName;
+
+                $this->Resize_File($filePath, 1000, 0);
 
 //                $path = $this->getUploadPath();
 //                $imageResize = Image::make($path . $fileFinalName)->widen(1000, function ($constraint) {
@@ -1942,6 +2025,10 @@ class TopicsController extends Controller
                     9999) . '.' . $request->file($formFileName)->getClientOriginalExtension();
             $path = $this->getUploadPath();
             $request->file($formFileName)->move($path, $fileFinalName);
+
+            $filePath = $path . $fileFinalName;
+
+            $this->Resize_File($filePath, 1000, 0);
 
 //            $imageResize = Image::make($path . $fileFinalName)->widen(1000, function ($constraint) {
 //                $constraint->upsize();
